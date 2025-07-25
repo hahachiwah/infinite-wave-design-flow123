@@ -2,6 +2,7 @@ import { LucideIcon } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
 interface ContaminantDetailTemplateProps {
   icon: LucideIcon;
@@ -30,8 +31,12 @@ const ContaminantDetailTemplate = ({
   technology,
   relatedLinks = []
 }: ContaminantDetailTemplateProps) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <div className="min-h-screen pt-24">
+    <div className="min-h-screen pt-24 animate-fade-in">
       {/* Hero Section */}
       <section className="py-16 gradient-subtle">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
