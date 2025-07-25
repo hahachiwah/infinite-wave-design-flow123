@@ -1,107 +1,122 @@
+import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import Autoplay from 'embla-carousel-autoplay';
+import { useRef } from 'react';
+
 const PartnersSection = () => {
+  const plugin = useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: true })
+  );
+
   const partners = [
     {
-      name: 'University of Queensland',
-      category: 'Research Institution',
-      logo: 'UQ'
-    },
-    {
-      name: 'UNSW Sydney',
-      category: 'Research Institution', 
-      logo: 'UNSW'
-    },
-    {
-      name: 'UTS Sydney',
-      category: 'Research Institution',
-      logo: 'UTS'
-    },
-    {
-      name: 'Water Corporation',
-      category: 'Utility Company',
-      logo: 'WC'
-    },
-    {
-      name: 'Fonterra',
+      name: 'Alano',
       category: 'Industrial Partner',
-      logo: 'FON'
-    },
-    {
-      name: 'Multiplex',
-      category: 'Construction',
-      logo: 'MUL'
+      logo: '/lovable-uploads/e43bf717-791c-448d-bc4c-cbcb1918d37c.png'
     },
     {
       name: 'Australian Aid',
       category: 'Government',
-      logo: 'AUS'
+      logo: '/lovable-uploads/b02c1a37-3c68-4fcc-b5c4-b630929a9a0c.png'
     },
     {
-      name: 'Westland',
+      name: 'Freedom Lifestyle Villages',
       category: 'Industrial Partner',
-      logo: 'WES'
+      logo: '/lovable-uploads/849bf037-c412-438e-95a1-27eaca8cfe5a.png'
+    },
+    {
+      name: 'Fonterra',
+      category: 'Industrial Partner',
+      logo: '/lovable-uploads/451f66e4-4bd0-4272-911a-f76f62a0be5d.png'
+    },
+    {
+      name: 'Multiplex',
+      category: 'Construction',
+      logo: '/lovable-uploads/5d9a39f1-cfce-46c3-b940-8a9de2c8e4b8.png'
+    },
+    {
+      name: 'Narromine Shire Council',
+      category: 'Government',
+      logo: '/lovable-uploads/65f160dc-4c3c-494d-9e80-541bdc3a2a70.png'
+    },
+    {
+      name: 'OJI',
+      category: 'Industrial Partner',
+      logo: '/lovable-uploads/8be17a64-f64a-40a5-9531-12daa932cd23.png'
+    },
+    {
+      name: 'Schutz',
+      category: 'Industrial Partner',
+      logo: '/lovable-uploads/82b47e25-afe6-415a-9d49-1a0528920cad.png'
+    },
+    {
+      name: 'Sealed Air',
+      category: 'Industrial Partner',
+      logo: '/lovable-uploads/ed1767dd-3b17-4219-abac-5ad286652fa4.png'
+    },
+    {
+      name: 'Sydney Water',
+      category: 'Utility Company',
+      logo: '/lovable-uploads/8d653f41-3935-45c7-a898-8d75231a5350.png'
     }
   ];
 
-  const getCategoryColor = (category: string) => {
-    switch (category) {
-      case 'Research Institution':
-        return 'text-blue-600';
-      case 'Utility Company':
-        return 'text-green-600';
-      case 'Industrial Partner':
-        return 'text-purple-600';
-      case 'Construction':
-        return 'text-orange-600';
-      case 'Government':
-        return 'text-red-600';
-      default:
-        return 'text-muted-foreground';
-    }
-  };
-
   return (
-    <section className="py-24 bg-muted/20">
+    <section className="py-16 bg-muted/20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Our <span className="text-primary">Partners</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We collaborate with leading institutions, corporations, and government organizations to drive innovation in water treatment technology.
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            We collaborate with leading organizations to drive innovation in water treatment technology.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-8">
-          {partners.map((partner, index) => (
-            <div
-              key={index}
-              className="group bg-card rounded-lg p-6 hover:shadow-medium transition-smooth text-center"
-            >
-              <div className="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-base">
-                <span className="text-lg font-bold text-primary">{partner.logo}</span>
-              </div>
-              <h3 className="font-semibold text-foreground mb-1">{partner.name}</h3>
-              <p className={`text-sm ${getCategoryColor(partner.category)}`}>
-                {partner.category}
-              </p>
-            </div>
-          ))}
-        </div>
+        <Carousel
+          plugins={[plugin.current]}
+          className="w-full max-w-6xl mx-auto"
+          onMouseEnter={plugin.current.stop}
+          onMouseLeave={plugin.current.reset}
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+        >
+          <CarouselContent className="-ml-2 md:-ml-4">
+            {partners.map((partner, index) => (
+              <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/2 md:basis-1/3 lg:basis-1/5">
+                <div className="group bg-card rounded-lg p-6 hover:shadow-lg transition-all duration-300 text-center h-full flex flex-col items-center justify-center">
+                  <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center group-hover:scale-105 transition-transform">
+                    <img 
+                      src={partner.logo} 
+                      alt={partner.name}
+                      className="max-w-full max-h-full object-contain"
+                    />
+                  </div>
+                  <h3 className="font-medium text-foreground text-sm mb-1">{partner.name}</h3>
+                  <p className="text-xs text-muted-foreground">
+                    {partner.category}
+                  </p>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
 
-        <div className="mt-16 text-center">
+        <div className="mt-12 text-center">
           <div className="inline-flex items-center space-x-8 text-muted-foreground">
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-1">50+</div>
+              <div className="text-2xl font-bold text-primary mb-1">50+</div>
               <div className="text-sm">Global Partners</div>
             </div>
-            <div className="w-px h-12 bg-border"></div>
+            <div className="w-px h-8 bg-border"></div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-1">25+</div>
+              <div className="text-2xl font-bold text-primary mb-1">25+</div>
               <div className="text-sm">Countries</div>
             </div>
-            <div className="w-px h-12 bg-border"></div>
+            <div className="w-px h-8 bg-border"></div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-1">15+</div>
+              <div className="text-2xl font-bold text-primary mb-1">15+</div>
               <div className="text-sm">Years Partnership</div>
             </div>
           </div>
