@@ -59,20 +59,6 @@ const Municipal = () => {
               <p className="text-xl md:text-2xl mb-8 text-white/90">
                 Comprehensive water treatment solutions for municipal applications across remote communities, regional councils, and urban utilities.
               </p>
-              <div className="flex justify-center gap-4 mt-12">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary">50+</div>
-                  <div className="text-sm text-white/80">Communities Served</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary">25+</div>
-                  <div className="text-sm text-white/80">Regional Councils</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary">15+</div>
-                  <div className="text-sm text-white/80">Urban Utilities</div>
-                </div>
-              </div>
             </div>
           </div>
         </section>
