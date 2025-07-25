@@ -9,6 +9,36 @@ const PartnersSection = () => {
 
   const partners = [
     {
+      name: 'University of Queensland',
+      category: 'Research Institution',
+      logo: '/lovable-uploads/477e690f-5885-48a2-b986-85362f3f6caa.png'
+    },
+    {
+      name: 'UNSW Sydney',
+      category: 'Research Institution',
+      logo: '/lovable-uploads/8bcf1e74-d850-4bde-93d8-690e34e6ba25.png'
+    },
+    {
+      name: 'UTS Sydney',
+      category: 'Research Institution',
+      logo: '/lovable-uploads/832973b9-ee0e-40f4-ad25-e34dfd42f701.png'
+    },
+    {
+      name: 'Water Corporation',
+      category: 'Utility Company',
+      logo: '/lovable-uploads/64d79107-03a1-4078-8268-06d438d4e73f.png'
+    },
+    {
+      name: 'Westland Milk Products',
+      category: 'Industrial Partner',
+      logo: '/lovable-uploads/783d540b-a9cf-4309-ada6-9657d99bd8f9.png'
+    },
+    {
+      name: 'Xstrata',
+      category: 'Industrial Partner',
+      logo: '/lovable-uploads/feb54366-a8ca-4d04-ba53-76edb8289ece.png'
+    },
+    {
       name: 'Alano',
       category: 'Industrial Partner',
       logo: '/lovable-uploads/e43bf717-791c-448d-bc4c-cbcb1918d37c.png'
@@ -102,25 +132,6 @@ const PartnersSection = () => {
             ))}
           </CarouselContent>
         </Carousel>
-
-        <div className="mt-12 text-center">
-          <div className="inline-flex items-center space-x-8 text-muted-foreground">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-primary mb-1">50+</div>
-              <div className="text-sm">Global Partners</div>
-            </div>
-            <div className="w-px h-8 bg-border"></div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-primary mb-1">25+</div>
-              <div className="text-sm">Countries</div>
-            </div>
-            <div className="w-px h-8 bg-border"></div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-primary mb-1">15+</div>
-              <div className="text-sm">Years Partnership</div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
