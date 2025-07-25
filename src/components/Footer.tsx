@@ -61,11 +61,10 @@ const Footer = () => {
             <div className="lg:col-span-2">
               <div className="flex items-center space-x-2 mb-6">
                 <img 
-                  src="/lovable-uploads/1c20599a-af33-4f8f-a707-f6f3de27a32e.png" 
+                  src="/lovable-uploads/18223f46-e114-4f16-8a48-67997d32111a.png" 
                   alt="infiniteWater" 
                   className="h-8 w-auto"
                 />
-                <span className="text-2xl font-bold">infiniteWater</span>
               </div>
               
               <p className="text-background/80 mb-6 leading-relaxed">
