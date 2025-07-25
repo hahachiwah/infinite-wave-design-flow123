@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-// Using professional water treatment equipment image as logo
+import LogoBlack from '@/assets/Infinite_Water_Logo_Black.png';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,7 +23,7 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center">
-              <img src="/lovable-uploads/1c20599a-af33-4f8f-a707-f6f3de27a32e.png" alt="Infinite Water - Professional Water Treatment" className="h-12 w-auto rounded-lg shadow-sm" />
+              <img src={LogoBlack} alt="Infinite Water Logo" className="h-8 w-auto" />
             </Link>
           </div>
 
