@@ -13,6 +13,7 @@ import AboutUs from "./pages/AboutUs";
 import PreeminentExperts from "./pages/PreeminentExperts";
 import Leadership from "./pages/Leadership";
 import Contact from "./pages/Contact";
+import Municipal from "./pages/Municipal";
 import NotFound from "./pages/NotFound";
 
 // Contaminant detail pages
@@ -45,6 +46,7 @@ const routeConfig = [
       { path: 'leadership', element: <Leadership /> },
     ]
   },
+  { path: '/municipal', element: <Municipal /> },
   { path: '/contact', element: <Contact /> },
   { path: '*', element: <NotFound /> }
 ];
