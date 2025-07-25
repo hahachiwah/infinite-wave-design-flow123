@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import LogoBlack from '@/assets/Infinite_Water_Logo_Black.png';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,8 +22,8 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link to="/" className="text-2xl font-bold text-primary">
-              infiniteWater
+            <Link to="/" className="flex items-center">
+              <img src={LogoBlack} alt="Infinite Water Logo" className="h-8 w-auto" />
             </Link>
           </div>
 
