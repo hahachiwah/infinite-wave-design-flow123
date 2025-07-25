@@ -1,10 +1,12 @@
-import { Droplets, Factory, Leaf, Settings, Zap, Shield } from 'lucide-react';
+import { Droplets, Factory, Leaf, Settings, Zap, Shield, Building } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ServicesSection = () => {
+  const navigate = useNavigate();
   const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
 
   const portableWaterServices = [
@@ -14,6 +16,14 @@ const ServicesSection = () => {
       description: 'Advanced seawater and brackish water desalination systems for pure drinking water.',
       features: ['Reverse Osmosis', 'Multi-Stage Flash', 'Energy Recovery'],
       image: 'https://images.unsplash.com/photo-1569163139707-de2daa3e3cd3?w=600&h=400&fit=crop'
+    },
+    {
+      icon: Building,
+      title: 'Municipal',
+      description: 'Comprehensive water treatment solutions for municipal applications across remote communities, regional councils, and urban utilities.',
+      features: ['Remote Communities', 'Regional Councils', 'Urban Utilities'],
+      image: 'https://images.unsplash.com/photo-1516627145497-ae4099ea6365?w=600&h=400&fit=crop',
+      redirectTo: '/municipal'
     }
   ];
 
@@ -79,7 +89,11 @@ const ServicesSection = () => {
           </div>
           
           {/* Learn More Button */}
-          <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-base">
+          <Button 
+            variant="outline" 
+            className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-base"
+            onClick={() => service.redirectTo && navigate(service.redirectTo)}
+          >
             Learn More
           </Button>
         </div>
