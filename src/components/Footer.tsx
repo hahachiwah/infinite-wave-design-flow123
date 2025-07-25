@@ -60,7 +60,11 @@ const Footer = () => {
             {/* Company Info */}
             <div className="lg:col-span-2">
               <div className="flex items-center space-x-2 mb-6">
-                <Droplets className="h-8 w-8 text-primary" />
+                <img 
+                  src="/lovable-uploads/1c20599a-af33-4f8f-a707-f6f3de27a32e.png" 
+                  alt="infiniteWater" 
+                  className="h-8 w-auto"
+                />
                 <span className="text-2xl font-bold">infiniteWater</span>
               </div>
               
