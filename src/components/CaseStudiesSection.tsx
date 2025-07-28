@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Link } from 'react-router-dom';
-import UnifiedHeroSection from '@/components/UnifiedHeroSection';
 
 const CaseStudiesSection = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -103,14 +102,7 @@ const CaseStudiesSection = () => {
   };
 
   return (
-    <>
-      <UnifiedHeroSection 
-        title="Case Studies"
-        subtitle="Find Your Cases Here"
-        description="Welcome! Use the search bar to find relevant cases easily. Simply type in keywords related to your query. Make sure to check your spelling for best results!"
-        showScrollIndicator={false}
-      />
-      <section id="case-studies" className="py-24 bg-background">
+    <section id="case-studies" className="py-24 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             {/* Search Bar */}
@@ -220,7 +212,6 @@ const CaseStudiesSection = () => {
         </div>
         </div>
       </section>
-    </>
   );
 };
 
