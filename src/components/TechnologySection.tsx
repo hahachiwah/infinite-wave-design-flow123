@@ -1,6 +1,7 @@
 import { Zap, Target, Award, CheckCircle, BarChart3, FlaskConical, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { useState } from 'react';
 
 const TechnologySection = () => {
@@ -127,11 +128,24 @@ const TechnologySection = () => {
               {/* Left side - Image taking full card area */}
               <Card className="p-0 overflow-hidden">
                 <CardContent className="p-0 h-full">
-                  <img 
-                    src="/lovable-uploads/5c360a7b-0769-46b4-a4cc-0eba0ec52e9a.png" 
-                    alt="CAT Process Diagram showing Stage 1 Conditioning and Stage 2 Catalytic Advanced Oxidation"
-                    className="w-full h-full object-cover"
-                  />
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <button className="w-full h-full cursor-pointer hover:opacity-90 transition-opacity">
+                        <img 
+                          src="/lovable-uploads/5c360a7b-0769-46b4-a4cc-0eba0ec52e9a.png" 
+                          alt="CAT Process Diagram showing Stage 1 Conditioning and Stage 2 Catalytic Advanced Oxidation"
+                          className="w-full h-full object-cover"
+                        />
+                      </button>
+                    </DialogTrigger>
+                    <DialogContent className="max-w-4xl w-full p-0">
+                      <img 
+                        src="/lovable-uploads/5c360a7b-0769-46b4-a4cc-0eba0ec52e9a.png" 
+                        alt="CAT Process Diagram showing Stage 1 Conditioning and Stage 2 Catalytic Advanced Oxidation"
+                        className="w-full h-auto"
+                      />
+                    </DialogContent>
+                  </Dialog>
                 </CardContent>
               </Card>
               
