@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 import UnifiedHeroSection from '@/components/UnifiedHeroSection';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { ArrowLeft, Star, Users, Award, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowLeft, Star, Award, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { expertsData } from '@/data/experts';
 
@@ -136,15 +136,6 @@ const Leadership = () => {
                       </div>
                     )}
 
-                    <div className="flex flex-col sm:flex-row gap-4">
-                      <Button size="lg" className="flex-1">
-                        <Users className="h-4 w-4 mr-2" />
-                        Contact Leader
-                      </Button>
-                      <Button variant="outline" size="lg" className="flex-1">
-                        Learn More
-                      </Button>
-                    </div>
                   </div>
                 </div>
               </Card>
@@ -152,27 +143,6 @@ const Leadership = () => {
           </div>
         </section>
 
-        {/* Related Expertise Section */}
-        {currentExpert.expertise && (
-          <section className="py-24 bg-muted/20">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                  Areas of <span className="text-primary">Expertise</span>
-                </h2>
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                {currentExpert.expertise.map((expertise, index) => (
-                  <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
-                    <h3 className="text-lg font-semibold text-foreground mb-3">{expertise.title}</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">{expertise.description}</p>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
       </main>
       <Footer />
     </div>
