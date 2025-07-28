@@ -3,6 +3,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { useState } from 'react';
+import UnifiedHeroSection from '@/components/UnifiedHeroSection';
 
 const TechnologySection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -128,16 +129,15 @@ const TechnologySection = () => {
   };
 
   return (
-    <section id="technology" className="py-24 bg-background">
-      <div className="w-full px-2.5">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            A game-changing <span className="text-primary">AOP Technology</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
-            Catalytic Advanced Treatment (CAT) is a water treatment process, an Advanced Oxidation process or AOP, based on Catalytic Advanced Oxidation, Catalytic Oxidation and Co-precipitation with disruptive features.
-          </p>
-        </div>
+    <>
+      <UnifiedHeroSection 
+        title="Technology"
+        subtitle="A game-changing AOP Technology"
+        description="Catalytic Advanced Treatment (CAT) is a water treatment process, an Advanced Oxidation process or AOP, based on Catalytic Advanced Oxidation, Catalytic Oxidation and Co-precipitation with disruptive features."
+        showScrollIndicator={false}
+      />
+      <section id="technology" className="py-24 bg-background">
+        <div className="w-full px-2.5">
 
         <div className="max-w-7xl mx-auto">
           {/* Key Features */}
@@ -425,11 +425,12 @@ const TechnologySection = () => {
                   </CardContent>
                 </Card>
               </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

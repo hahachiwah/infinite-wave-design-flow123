@@ -1,6 +1,6 @@
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import HeroIntroSection from '@/components/HeroIntroSection';
+import UnifiedHeroSection from '@/components/UnifiedHeroSection';
 import SectionsOverview from '@/components/SectionsOverview';
 import PartnersSection from '@/components/PartnersSection';
 
@@ -8,7 +8,14 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Navigation />
-      <HeroIntroSection videoSrc="/lovable-uploads/infinite-water_header.mp4" />
+      <UnifiedHeroSection 
+        title="infiniteWater"
+        subtitle="Revolutionizing water treatment with proprietary technology"
+        description="Our patented solutions remove the world's most challenging contaminants, delivering safe, clean water for drinking, industrial, and environmental applications."
+        primaryButtonText="Explore Our Solutions"
+        secondaryButtonText="View Case Studies"
+        videoSrc="/lovable-uploads/infinite-water_header.mp4"
+      />
       <SectionsOverview />
       <PartnersSection />
       <Footer />

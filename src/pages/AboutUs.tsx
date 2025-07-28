@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
+import UnifiedHeroSection from '@/components/UnifiedHeroSection';
 import Footer from '@/components/Footer';
 import PartnersSection from '@/components/PartnersSection';
 import { Button } from '@/components/ui/button';
@@ -129,20 +130,13 @@ const AboutUs = () => {
   return (
     <div className="min-h-screen">
       <Navigation />
-      <main className="pt-16">
-        {/* Hero Section */}
-        <section className="py-24 bg-gradient-to-br from-background to-muted/20">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-                About <span className="text-primary">Us</span>
-              </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
-                Exceptional people. Exceptional solutions.
-              </p>
-            </div>
-          </div>
-        </section>
+      <UnifiedHeroSection 
+        title="About Us"
+        subtitle="Exceptional people. Exceptional solutions."
+        description="Leading the future of water treatment through innovation, expertise, and unwavering commitment to excellence."
+        showScrollIndicator={false}
+      />
+      <main className="pt-0">
 
         {/* Main Categories Section */}
         <section className="py-24 bg-background">

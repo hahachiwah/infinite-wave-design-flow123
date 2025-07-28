@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Link } from 'react-router-dom';
+import UnifiedHeroSection from '@/components/UnifiedHeroSection';
 
 const CaseStudiesSection = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -102,42 +103,42 @@ const CaseStudiesSection = () => {
   };
 
   return (
-    <section id="case-studies" className="py-24 bg-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Find Your Cases Here
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Welcome! Use the search bar to find relevant cases easily. Simply type in keywords related to your query. Make sure to check your spelling for best results!
-          </p>
-          
-          {/* Search Bar */}
-          <div className="relative max-w-md mx-auto mb-8">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
-            <Input
-              type="text"
-              placeholder="Search case studies..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-10"
-            />
-          </div>
+    <>
+      <UnifiedHeroSection 
+        title="Case Studies"
+        subtitle="Find Your Cases Here"
+        description="Welcome! Use the search bar to find relevant cases easily. Simply type in keywords related to your query. Make sure to check your spelling for best results!"
+        showScrollIndicator={false}
+      />
+      <section id="case-studies" className="py-24 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            {/* Search Bar */}
+            <div className="relative max-w-md mx-auto mb-8">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
+              <Input
+                type="text"
+                placeholder="Search case studies..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="pl-10"
+              />
+            </div>
 
-          {/* Tags */}
-          <div className="flex flex-wrap justify-center gap-2 mb-8">
-            {tags.map((tag, index) => (
-              <Badge 
-                key={index} 
-                variant="secondary"
-                className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-base"
-                onClick={() => setSearchTerm(tag)}
-              >
-                {tag}
-              </Badge>
-            ))}
+            {/* Tags */}
+            <div className="flex flex-wrap justify-center gap-2 mb-8">
+              {tags.map((tag, index) => (
+                <Badge 
+                  key={index} 
+                  variant="secondary"
+                  className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-base"
+                  onClick={() => setSearchTerm(tag)}
+                >
+                  {tag}
+                </Badge>
+              ))}
+            </div>
           </div>
-        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
           {filteredCaseStudies.map((study, index) => (
@@ -217,8 +218,9 @@ const CaseStudiesSection = () => {
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         </div>
-      </div>
-    </section>
+        </div>
+      </section>
+    </>
   );
 };
 
