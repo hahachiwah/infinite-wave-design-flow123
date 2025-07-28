@@ -132,39 +132,13 @@ const TechnologySection = () => {
         <div className="w-full px-2.5">
 
         <div className="max-w-7xl mx-auto">
-          {/* Key Features */}
-          <div className="bg-muted/50 py-16 -mx-[calc(50vw-50%)] px-[calc(50vw-50%)] mb-16">
-            <div className="max-w-7xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <Card className="p-6 hover:shadow-large transition-smooth">
-                  <CardContent className="p-0">
-                    <Zap className="h-12 w-12 text-primary mb-4" />
-                    <h3 className="text-xl font-bold mb-3">AOP without Traditional Drawbacks</h3>
-                    <p className="text-muted-foreground">An AOP without the associated traditional drawbacks</p>
-                  </CardContent>
-                </Card>
-                <Card className="p-6 hover:shadow-large transition-smooth">
-                  <CardContent className="p-0">
-                    <Target className="h-12 w-12 text-primary mb-4" />
-                    <h3 className="text-xl font-bold mb-3">Highly Adaptable</h3>
-                    <p className="text-muted-foreground">Highly adaptable and easily integrated with existing systems</p>
-                  </CardContent>
-                </Card>
-                <Card className="p-6 hover:shadow-large transition-smooth">
-                  <CardContent className="p-0">
-                    <CheckCircle className="h-12 w-12 text-primary mb-4" />
-                    <h3 className="text-xl font-bold mb-3">ESG Compliant</h3>
-                    <p className="text-muted-foreground">ESG compliant but also with compelling cost advantage</p>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </div>
 
           {/* Core Concept of CAT */}
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold text-primary mb-8">Core Concept of CAT</h2>
+          </div>
           <div className="bg-background py-16 -mx-[calc(50vw-50%)] px-[calc(50vw-50%)] mb-16">
             <div className="max-w-7xl mx-auto">
-              <h3 className="text-2xl font-bold text-center mb-8">Core Concept of CAT</h3>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Left side - Image taking full card area */}
                 <Card className="p-0 overflow-hidden">
