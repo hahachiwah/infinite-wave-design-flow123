@@ -62,7 +62,7 @@ const Footer = () => {
               <div className="flex items-center space-x-2 mb-6">
                 <img 
                   src="/lovable-uploads/18223f46-e114-4f16-8a48-67997d32111a.png" 
-                  alt="infiniteWater" 
+                  alt="Infinite Water" 
                   className="h-8 w-auto"
                 />
               </div>
@@ -151,7 +151,7 @@ const Footer = () => {
         <div className="border-t border-background/20 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-background/80 text-sm">
-              © 2024 InfiniteWater. All rights reserved.
+              © 2024 Infinite Water. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
               <a href="#" className="text-background/80 hover:text-background transition-colors">
