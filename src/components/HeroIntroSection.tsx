@@ -1,19 +1,104 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Play, Pause, Volume2, VolumeX } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useState, useRef, useEffect } from 'react';
 import heroImage from '@/assets/hero-water.jpg';
 
-const HeroIntroSection = () => {
+const HeroIntroSection = ({ videoSrc }: { videoSrc?: string }) => {
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [isMuted, setIsMuted] = useState(true);
+  const [showControls, setShowControls] = useState(false);
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video && videoSrc) {
+      video.addEventListener('loadeddata', () => setVideoLoaded(true));
+      video.addEventListener('error', () => setVideoLoaded(false));
+    }
+  }, [videoSrc]);
+
+  const togglePlay = () => {
+    const video = videoRef.current;
+    if (video) {
+      if (isPlaying) {
+        video.pause();
+      } else {
+        video.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
+  const toggleMute = () => {
+    const video = videoRef.current;
+    if (video) {
+      video.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
+  };
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
+    <section 
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      onMouseEnter={() => setShowControls(true)}
+      onMouseLeave={() => setShowControls(false)}
+    >
+      {/* Background Video/Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={heroImage} 
-          alt="Water treatment technology" 
-          className="w-full h-full object-cover"
-        />
+        {videoSrc ? (
+          <>
+            <video
+              ref={videoRef}
+              autoPlay
+              loop
+              muted={isMuted}
+              playsInline
+              preload="metadata"
+              className="w-full h-full object-cover"
+              style={{ display: videoLoaded ? 'block' : 'none' }}
+            >
+              <source src={videoSrc} type="video/mp4" />
+            </video>
+            {!videoLoaded && (
+              <img 
+                src={heroImage} 
+                alt="Water treatment technology" 
+                className="w-full h-full object-cover"
+              />
+            )}
+          </>
+        ) : (
+          <img 
+            src={heroImage} 
+            alt="Water treatment technology" 
+            className="w-full h-full object-cover"
+          />
+        )}
         <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/70 to-primary/50"></div>
       </div>
+
+      {/* Video Controls */}
+      {videoSrc && videoLoaded && (
+        <div className={`absolute top-6 right-6 z-30 flex gap-2 transition-opacity duration-300 ${showControls ? 'opacity-100' : 'opacity-0'}`}>
+          <Button
+            size="sm"
+            variant="outline"
+            className="bg-white/10 border-white/30 text-white hover:bg-white/20"
+            onClick={togglePlay}
+          >
+            {isPlaying ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
+          </Button>
+          <Button
+            size="sm"
+            variant="outline"
+            className="bg-white/10 border-white/30 text-white hover:bg-white/20"
+            onClick={toggleMute}
+          >
+            {isMuted ? <VolumeX className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
+          </Button>
+        </div>
+      )}
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
