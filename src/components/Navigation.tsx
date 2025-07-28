@@ -23,11 +23,13 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center">
-              <img 
-                src="/lovable-uploads/18223f46-e114-4f16-8a48-67997d32111a.png" 
-                alt="infiniteWater" 
-                className="h-12 w-auto" 
-              />
+              <div className="bg-white/90 backdrop-blur-sm rounded-lg p-2 shadow-md border border-white/20">
+                <img 
+                  src="/lovable-uploads/18223f46-e114-4f16-8a48-67997d32111a.png" 
+                  alt="infiniteWater" 
+                  className="h-8 w-auto" 
+                />
+              </div>
             </Link>
           </div>
 
