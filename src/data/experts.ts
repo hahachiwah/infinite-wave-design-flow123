@@ -6,13 +6,13 @@ export const expertsData: Expert[] = [
     name: 'Gheorghe',
     title: 'Lead Scientist & Engineer',
     bio: 'Gheorghe has worked as a scientist and engineer in fluid engineering, manufacturing engineering, process engineering (water), plant and equipment design and new technology and application development for over 35 years. Gheorghe has been engaged as an advisor on water treatment solutions by various reputable organisations and government agencies including CSIRO, Water Corporation of Western Australia, WA Department of Water and Energy Resources Australia Limited.',
-    specialization: 'HYDROXON™ Process Pioneer',
+    specialization: 'CAT Process Pioneer',
     image: '/lovable-uploads/927cd115-1865-4db6-8aca-0fe09ab31ec3.png',
     category: 'preeminent-experts',
     achievements: [
       '35+ years in fluid and process engineering',
       'Advisor to CSIRO and Water Corporation of Western Australia',
-      'Pioneer of patented HYDROXON™ process',
+      'Pioneer of patented CAT process',
       '12+ years leading Catalytic Advanced Oxidation research'
     ],
     expertise: [
@@ -28,7 +28,7 @@ export const expertsData: Expert[] = [
       },
       {
         icon: 'Zap',
-        title: 'HYDROXON™ Technology',
+        title: 'CAT Technology',
         description: 'Pioneering the patented Catalytic Advanced Oxidation process for water treatment.'
       },
       {
