@@ -9,7 +9,7 @@ const Index = () => {
     <div className="min-h-screen">
       <Navigation />
       <UnifiedHeroSection 
-        title="infiniteWater"
+        title="Infinite Water"
         subtitle="Revolutionizing water treatment with proprietary technology"
         description="Our patented solutions remove the world's most challenging contaminants, delivering safe, clean water for drinking, industrial, and environmental applications."
         videoSrc="/lovable-uploads/infinite-water_header.mp4"
