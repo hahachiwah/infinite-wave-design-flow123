@@ -24,6 +24,34 @@ const ServicesSection = () => {
       features: ['Remote Communities', 'Regional Councils', 'Urban Utilities'],
       image: 'https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?w=600&h=400&fit=crop',
       redirectTo: '/municipal'
+    },
+    {
+      icon: Shield,
+      title: 'Disaster Relief Water Treatment',
+      description: 'Rapid deployment water treatment systems for emergency and disaster relief situations.',
+      features: ['Portable Systems', 'Emergency Response', 'Rapid Deployment'],
+      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop'
+    },
+    {
+      icon: Zap,
+      title: 'PFAS Degradation',
+      description: 'Advanced treatment systems for PFAS degradation in drinking water sources.',
+      features: ['PFAS Removal', 'Advanced Oxidation', 'Drinking Water Safety'],
+      image: 'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=600&h=400&fit=crop'
+    },
+    {
+      icon: Leaf,
+      title: 'Glyphosate Degradation',
+      description: 'Specialized treatment for glyphosate degradation in drinking water sources.',
+      features: ['Pesticide Removal', 'CAT Technology', 'Water Purification'],
+      image: 'https://images.unsplash.com/photo-1574263867128-ed92a33e7da7?w=600&h=400&fit=crop'
+    },
+    {
+      icon: Settings,
+      title: 'Packaged Desalination Plants',
+      description: 'Medium size desalinating plants for inhabited islands and coastal areas.',
+      features: ['Coastal Solutions', 'Island Communities', 'Modular Design'],
+      image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=400&fit=crop'
     }
   ];
 
