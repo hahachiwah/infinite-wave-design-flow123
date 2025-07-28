@@ -13,8 +13,33 @@ const HeroIntroSection = ({ videoSrc }: { videoSrc?: string }) => {
   useEffect(() => {
     const video = videoRef.current;
     if (video && videoSrc) {
-      video.addEventListener('loadeddata', () => setVideoLoaded(true));
-      video.addEventListener('error', () => setVideoLoaded(false));
+      const handleLoadedData = () => {
+        console.log('Video loaded successfully');
+        setVideoLoaded(true);
+      };
+      const handleError = (e: Event) => {
+        console.log('Video failed to load:', e);
+        setVideoLoaded(false);
+      };
+      const handleCanPlay = () => {
+        console.log('Video can play');
+        setVideoLoaded(true);
+      };
+
+      video.addEventListener('loadeddata', handleLoadedData);
+      video.addEventListener('canplay', handleCanPlay);
+      video.addEventListener('error', handleError);
+      
+      // Check if video is already loaded
+      if (video.readyState >= 2) {
+        setVideoLoaded(true);
+      }
+
+      return () => {
+        video.removeEventListener('loadeddata', handleLoadedData);
+        video.removeEventListener('canplay', handleCanPlay);
+        video.removeEventListener('error', handleError);
+      };
     }
   }, [videoSrc]);
 
