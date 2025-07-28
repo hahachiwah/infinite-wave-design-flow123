@@ -1,4 +1,4 @@
-import { Zap, Target, Award, CheckCircle, BarChart3, FlaskConical, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Zap, Target, Award, CheckCircle, BarChart3, FlaskConical, ChevronLeft, ChevronRight, Shield, DollarSign, Recycle, Activity, Award as Award2 } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
@@ -6,6 +6,50 @@ import { useState } from 'react';
 
 const TechnologySection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentFeature, setCurrentFeature] = useState(0);
+
+  const catFeatures = [
+    {
+      title: "Proprietary Catalytic Mechanism for Radical Generation",
+      icon: FlaskConical,
+      overview: "CAT employs a multi-metal oxide granular catalyst in a simple reactor setup (similar to a mixed media filter). Charged sites on the catalyst split water molecules (H₂O → H⁺ + OH⁻) and decompose low-cost oxygen donors (e.g., NaOCl, permanganate, or H₂O₂) to release atomic oxygen and generate highly reactive hydroxyl radicals (•OH, redox potential 2.8V), enabling rapid oxidation of organics into CO₂, water, and salts, while also oxidizing inorganics and disinfecting pathogens.",
+      unique: "Unlike homogeneous AOPs (e.g., Fenton or UV/H₂O₂) that rely on bulk chemical mixing or energy-intensive UV lamps, CAT is heterogeneous and catalyst-driven, offering reusability and efficiency without external energy sources like electricity for ozone generation or UV, avoiding issues like short oxidant half-life or pH sensitivity.",
+      comparison: "Traditional AOPs like photocatalysis (TiO₂/UV) or electrochemical AOPs demand high energy for UV or electrodes, while biological treatments are ineffective against recalcitrant pollutants.",
+      advantage: "Achieves complete mineralization of pollutants faster than conventional oxidants (e.g., chlorine at 1.36V or NaOCl at 0.95V), with reaction rates 10^8–10^10 M⁻¹s⁻¹ for •OH."
+    },
+    {
+      title: "Ultra-Low Energy and Operational Costs",
+      icon: DollarSign,
+      overview: "The system operates with minimal energy input, consuming approximately 0.1 kWh/m³, and requires only 3–6 minutes of contact time for effective treatment, eliminating the need for expensive instrumentation or high-pressure pumps.",
+      unique: "Unlike systems requiring regeneration (e.g., activated carbon) or complex setups, CAT offers a smaller footprint and easy retrofitting into existing systems without the need for high-energy processes.",
+      comparison: "Far below reverse osmosis (RO: 2.0–2.5 kWh/m³), ozonation (0.5–2.5 USD/m³), or UV/H₂O₂ (1.0–4.0 USD/m³). Biological treatments (0.2–0.8 USD/m³) are cheaper but offer lower efficiency (only 10–40% removal for dyes/organics).",
+      advantage: "Combines high efficiency (90–99% contaminant removal) with low OPEX, making it ESG-compliant and cost-competitive, with notionally 50% better OPEX than current solutions."
+    },
+    {
+      title: "No Sludge or Waste Byproducts",
+      icon: Recycle,
+      overview: "Pollutants are degraded on-site through catalytic oxidation, with minimal solids removed via automated backwash, resulting in no sludge or concentrate generation.",
+      unique: "Provides true destruction of contaminants rather than mere transfer, supporting zero liquid discharge (ZLD) goals without the disposal challenges typical of other methods.",
+      comparison: "Unlike coagulation-flocculation (high sludge production) or Fenton processes (iron sludge disposal costs), and avoids concentrate waste from RO or adsorbed pollutants from activated carbon that require regeneration.",
+      advantage: "Achieves high water recovery (up to 95% vs. RO's 50–70%), reducing environmental impact and operational hassles."
+    },
+    {
+      title: "Broad-Spectrum Contaminant Removal and Disinfection",
+      icon: Shield,
+      overview: "The technology simultaneously removes organics (e.g., 69% DOC reduction), inorganics (e.g., 91–99% for Fe, Mn, Al), turbidity (>99%), color (>99%), and emerging contaminants (e.g., PFAS, glyphosate), while providing disinfection with log reduction values (LRV) exceeding standards: >5.7 for bacteria, >8.0 for viruses, ≥4.6 for protozoa.",
+      unique: "Multi-functional in one process—disinfection, oxidation, and precipitation—without added chlorine, reducing disinfection byproducts (DBPs) by up to 70%, and effective for tough issues like algal bloom prevention (99.5% phosphorus removal) and heavy metals (e.g., antimony to 0.01 mg/L).",
+      comparison: "Membrane filtration (UF/NF/RO: 80–99% efficiency but prone to fouling and high maintenance) or activated carbon (70–95% but limited scope) handle fewer contaminants per step. Standard AOPs like ozonation produce more byproducts and cost more.",
+      advantage: "Validated by third parties (e.g., UNSW, WHO standards) for superior performance across diverse applications, from rural water supply to industrial wastewater."
+    },
+    {
+      title: "Validated Performance and Scalability",
+      icon: Award2,
+      overview: "The modular and scalable design suits applications from small community systems to large industrial setups, with independent validations confirming its efficacy through third-party tests (e.g., UNSW, Sydney Water trials).",
+      unique: "Designed for easy integration and automation, with remote access and disruptive innovations in CAPEX reduction, tailored for diverse needs.",
+      comparison: "Outperforms progressive industry goals (e.g., ZDHC standards for global suppliers like Nike/Adidas), where current solutions fall short in cost and efficiency.",
+      advantage: "Positions Infinite Water as a leader in sustainable treatment, especially for emerging contaminants and water reuse, with real-world reliability proven through trials."
+    }
+  ];
 
   const carouselContent = [
     {
@@ -197,124 +241,95 @@ const TechnologySection = () => {
 
           {/* Unique Technological Features */}
           <div className="mb-16">
-            <h3 className="text-2xl font-bold text-center mb-8">Unique Technological Features of Hydroxon™ (Catalytic Advanced Oxidation)</h3>
-            
-            {/* Feature 1 */}
-            <Card className="p-8 mb-8">
-              <CardContent className="p-0">
-                <h4 className="text-xl font-semibold text-primary mb-4">1. Proprietary Catalytic Mechanism for Radical Generation</h4>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                  <div>
-                    <h5 className="font-semibold mb-3">Process Description</h5>
-                    <p className="text-muted-foreground mb-4">
-                      Hydroxon™ uses a multi-metal oxide granular catalyst in a simple reactor setup (similar to a mixed media filter). Water flows through the bed, where charged sites on the catalyst split water molecules (H₂O → H⁺ + OH⁻) and decompose low-cost oxygen donors (e.g., NaOCl, permanganate, or H₂O₂) to release atomic oxygen and generate highly reactive species like hydroxyl radicals (•OH, redox potential 2.8V).
-                    </p>
-                  </div>
-                  <div>
-                    <h5 className="font-semibold mb-3">What Makes It Unique</h5>
-                    <p className="text-muted-foreground mb-4">
-                      Unlike homogeneous AOPs (e.g., Fenton or UV/H₂O₂) that rely on bulk chemical mixing or energy-intensive UV lamps, Hydroxon™ is heterogeneous and catalyst-driven, making it reusable and efficient without external energy sources like electricity for ozone generation or UV.
-                    </p>
-                    <p className="text-primary font-semibold">
-                      Achieves complete mineralization with reaction rates 10⁸–10¹⁰ M⁻¹s⁻¹ for •OH.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-primary mb-6">
+                Unique Technological Features of CAT (Catalytic Advanced Oxidation)
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
+                Infinite Water's CAT process, based on Catalytic Advanced Oxidation, stands out in the water treatment industry by addressing key limitations of conventional and other advanced methods. Unlike traditional technologies that often transfer pollutants to another phase (e.g., sludge or concentrate) or require high energy/chemical inputs, CAT destroys contaminants in situ through a low-energy catalytic reaction.
+              </p>
+            </div>
 
-            {/* Feature 2 */}
-            <Card className="p-8 mb-8 bg-primary/5 border-primary/20">
-              <CardContent className="p-0">
-                <h4 className="text-xl font-semibold text-primary mb-4">2. Ultra-Low Energy and Operational Costs</h4>
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                  <div>
-                    <h5 className="font-semibold mb-3">Key Metric</h5>
-                    <p className="text-muted-foreground">
-                      Consumes ~0.1 kWh/m³, far below reverse osmosis (RO: 2.0–2.5 kWh/m³), ozonation (0.5–2.5 USD/m³), or UV/H₂O₂ (1.0–4.0 USD/m³).
-                    </p>
-                  </div>
-                  <div>
-                    <h5 className="font-semibold mb-3">Unique Features</h5>
-                    <p className="text-muted-foreground">
-                      No need for expensive instrumentation, high-pressure pumps (like in membranes), or regeneration (like activated carbon). Contact time is just 3–6 minutes, enabling a smaller footprint and retrofitting into existing systems.
-                    </p>
-                  </div>
-                  <div>
-                    <h5 className="font-semibold mb-3">Competitive Advantage</h5>
-                    <p className="text-muted-foreground">
-                      Combines high efficiency (90–99% removal) with low OPEX, making it ESG-compliant and cost-competitive compared to traditional AOPs that demand high energy for UV or electrodes.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Feature 3 */}
-            <Card className="p-8 mb-8">
-              <CardContent className="p-0">
-                <h4 className="text-xl font-semibold text-primary mb-4">3. No Sludge or Waste Byproducts</h4>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                  <div>
-                    <h5 className="font-semibold mb-3">Process Benefit</h5>
-                    <p className="text-muted-foreground">
-                      Pollutants are degraded on-site without generating sludge, unlike coagulation-flocculation (high sludge) or Fenton processes (iron sludge disposal costs). Backwash removes minimal solids, and the system is automated with remote access.
-                    </p>
-                  </div>
-                  <div>
-                    <h5 className="font-semibold mb-3">Standout Advantage</h5>
-                    <p className="text-muted-foreground">
-                      True destruction rather than transfer—e.g., no concentrate waste like RO or adsorbed pollutants needing disposal like activated carbon. Supports zero liquid discharge (ZLD) goals, with high water recovery (up to 95% vs. RO's 50–70%).
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Feature 4 */}
-            <Card className="p-8 mb-8 bg-primary/5 border-primary/20">
-              <CardContent className="p-0">
-                <h4 className="text-xl font-semibold text-primary mb-4">4. Broad-Spectrum Contaminant Removal and Disinfection</h4>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                  <div>
-                    <h5 className="font-semibold mb-3">Capabilities</h5>
-                    <p className="text-muted-foreground mb-4">
-                      Simultaneously removes organics (e.g., 69% DOC reduction), inorganics (e.g., 91–99% for Fe, Mn, Al), turbidity ({'>'}99%), color ({'>'}99%), and emerging contaminants (e.g., PFAS, glyphosate).
-                    </p>
-                    <p className="text-muted-foreground">
-                      Achieves superior disinfection with log reduction values (LRV) exceeding standards: {'>'}5.7 for bacteria, {'>'}8.0 for viruses, ≥4.6 for protozoa (validated by UNSW and WHO standards).
-                    </p>
-                  </div>
-                  <div>
-                    <h5 className="font-semibold mb-3">Multi-functional Process</h5>
-                    <p className="text-muted-foreground mb-4">
-                      Multi-functional in one process—disinfection, oxidation, and precipitation—without added chlorine (reduces DBPs by up to 70%). Effective for tough applications like algal bloom prevention (99.5% phosphorus removal) and heavy metals (e.g., antimony to 0.01 mg/L, 50% below 2025 goals).
-                    </p>
+            {/* CAT Features Carousel */}
+            <div className="mb-16">
+              <div className="relative">
+                <div className="overflow-hidden">
+                  <div 
+                    className="flex transition-transform duration-500 ease-in-out"
+                    style={{ transform: `translateX(-${currentFeature * 100}%)` }}
+                  >
+                    {catFeatures.map((feature, index) => (
+                      <div key={index} className="w-full flex-shrink-0 px-4">
+                        <Card className="h-full">
+                          <CardContent className="p-8">
+                            <div className="flex items-center mb-6">
+                              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
+                                <feature.icon className="w-6 h-6 text-primary" />
+                              </div>
+                              <h3 className="text-2xl font-bold text-primary">{feature.title}</h3>
+                            </div>
+                            
+                            <div className="space-y-6">
+                              <div>
+                                <h4 className="font-semibold text-lg mb-2 text-foreground">Feature Overview:</h4>
+                                <p className="text-muted-foreground leading-relaxed">{feature.overview}</p>
+                              </div>
+                              
+                              <div>
+                                <h4 className="font-semibold text-lg mb-2 text-foreground">What Makes It Unique:</h4>
+                                <p className="text-muted-foreground leading-relaxed">{feature.unique}</p>
+                              </div>
+                              
+                              <div>
+                                <h4 className="font-semibold text-lg mb-2 text-foreground">Comparison to Competitors:</h4>
+                                <p className="text-muted-foreground leading-relaxed">{feature.comparison}</p>
+                              </div>
+                              
+                              <div className="bg-primary/5 p-4 rounded-lg">
+                                <h4 className="font-semibold text-lg mb-2 text-primary">Standout Advantage:</h4>
+                                <p className="text-muted-foreground leading-relaxed">{feature.advantage}</p>
+                              </div>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      </div>
+                    ))}
                   </div>
                 </div>
-              </CardContent>
-            </Card>
-
-            {/* Feature 5 */}
-            <Card className="p-8">
-              <CardContent className="p-0">
-                <h4 className="text-xl font-semibold text-primary mb-4">5. Validated Performance and Scalability</h4>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                  <div>
-                    <h5 className="font-semibold mb-3">Independent Validation</h5>
-                    <p className="text-muted-foreground">
-                      Third-party tested (e.g., UNSW Global Water Institute, Sydney Water trials for NOM removal), proving it outperforms progressive goals (e.g., ZDHC standards for suppliers like Nike/Adidas).
-                    </p>
-                  </div>
-                  <div>
-                    <h5 className="font-semibold mb-3">Scalable Design</h5>
-                    <p className="text-muted-foreground">
-                      Modular, scalable design suits diverse applications—from small rural/disaster relief systems to industrial wastewater (e.g., textile, metal plating) and ultrapure water production. Notionally 50% better OPEX than current solutions, with disruptive innovation in CAPEX reduction.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+                
+                {/* Navigation buttons */}
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="absolute left-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-background/80 backdrop-blur-sm"
+                  onClick={() => setCurrentFeature(currentFeature === 0 ? catFeatures.length - 1 : currentFeature - 1)}
+                >
+                  <ChevronLeft className="h-4 w-4" />
+                </Button>
+                
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-background/80 backdrop-blur-sm"
+                  onClick={() => setCurrentFeature((currentFeature + 1) % catFeatures.length)}
+                >
+                  <ChevronRight className="h-4 w-4" />
+                </Button>
+              </div>
+              
+              {/* Dots indicator */}
+              <div className="flex justify-center mt-6 space-x-2">
+                {catFeatures.map((_, index) => (
+                  <button
+                    key={index}
+                    className={`w-3 h-3 rounded-full transition-colors ${
+                      index === currentFeature ? 'bg-primary' : 'bg-muted'
+                    }`}
+                    onClick={() => setCurrentFeature(index)}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
 
 
