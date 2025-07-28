@@ -128,7 +128,7 @@ const TechnologySection = () => {
   };
 
   return (
-    <section id="technology" className="py-24 gradient-subtle">
+    <section id="technology" className="py-24 bg-background">
       <div className="w-full px-2.5">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
@@ -141,117 +141,123 @@ const TechnologySection = () => {
 
         <div className="max-w-7xl mx-auto">
           {/* Key Features */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            <Card className="p-6 hover:shadow-large transition-smooth">
-              <CardContent className="p-0">
-                <Zap className="h-12 w-12 text-primary mb-4" />
-                <h3 className="text-xl font-bold mb-3">AOP without Traditional Drawbacks</h3>
-                <p className="text-muted-foreground">An AOP without the associated traditional drawbacks</p>
-              </CardContent>
-            </Card>
-            <Card className="p-6 hover:shadow-large transition-smooth">
-              <CardContent className="p-0">
-                <Target className="h-12 w-12 text-primary mb-4" />
-                <h3 className="text-xl font-bold mb-3">Highly Adaptable</h3>
-                <p className="text-muted-foreground">Highly adaptable and easily integrated with existing systems</p>
-              </CardContent>
-            </Card>
-            <Card className="p-6 hover:shadow-large transition-smooth">
-              <CardContent className="p-0">
-                <CheckCircle className="h-12 w-12 text-primary mb-4" />
-                <h3 className="text-xl font-bold mb-3">ESG Compliant</h3>
-                <p className="text-muted-foreground">ESG compliant but also with compelling cost advantage</p>
-              </CardContent>
-            </Card>
+          <div className="bg-muted/30 py-16 -mx-[calc(50vw-50%)] px-[calc(50vw-50%)] mb-16">
+            <div className="max-w-7xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <Card className="p-6 hover:shadow-large transition-smooth">
+                  <CardContent className="p-0">
+                    <Zap className="h-12 w-12 text-primary mb-4" />
+                    <h3 className="text-xl font-bold mb-3">AOP without Traditional Drawbacks</h3>
+                    <p className="text-muted-foreground">An AOP without the associated traditional drawbacks</p>
+                  </CardContent>
+                </Card>
+                <Card className="p-6 hover:shadow-large transition-smooth">
+                  <CardContent className="p-0">
+                    <Target className="h-12 w-12 text-primary mb-4" />
+                    <h3 className="text-xl font-bold mb-3">Highly Adaptable</h3>
+                    <p className="text-muted-foreground">Highly adaptable and easily integrated with existing systems</p>
+                  </CardContent>
+                </Card>
+                <Card className="p-6 hover:shadow-large transition-smooth">
+                  <CardContent className="p-0">
+                    <CheckCircle className="h-12 w-12 text-primary mb-4" />
+                    <h3 className="text-xl font-bold mb-3">ESG Compliant</h3>
+                    <p className="text-muted-foreground">ESG compliant but also with compelling cost advantage</p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
           </div>
 
           {/* Core Concept of CAT */}
-          <div className="mb-16">
-            <h3 className="text-2xl font-bold text-center mb-8">Core Concept of CAT</h3>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-              {/* Left side - Image taking full card area */}
-              <Card className="p-0 overflow-hidden">
-                <CardContent className="p-0 h-full">
-                  <Dialog>
-                    <DialogTrigger asChild>
-                      <button className="w-full h-full cursor-pointer hover:opacity-90 transition-opacity">
+          <div className="bg-background py-16 -mx-[calc(50vw-50%)] px-[calc(50vw-50%)] mb-16">
+            <div className="max-w-7xl mx-auto">
+              <h3 className="text-2xl font-bold text-center mb-8">Core Concept of CAT</h3>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {/* Left side - Image taking full card area */}
+                <Card className="p-0 overflow-hidden">
+                  <CardContent className="p-0 h-full">
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <button className="w-full h-full cursor-pointer hover:opacity-90 transition-opacity">
+                          <img 
+                            src="/lovable-uploads/5c360a7b-0769-46b4-a4cc-0eba0ec52e9a.png" 
+                            alt="CAT Process Diagram showing Stage 1 Conditioning and Stage 2 Catalytic Advanced Oxidation"
+                            className="w-full h-full object-cover"
+                          />
+                        </button>
+                      </DialogTrigger>
+                      <DialogContent className="max-w-4xl w-full p-0">
                         <img 
                           src="/lovable-uploads/5c360a7b-0769-46b4-a4cc-0eba0ec52e9a.png" 
                           alt="CAT Process Diagram showing Stage 1 Conditioning and Stage 2 Catalytic Advanced Oxidation"
-                          className="w-full h-full object-cover"
+                          className="w-full h-auto"
                         />
-                      </button>
-                    </DialogTrigger>
-                    <DialogContent className="max-w-4xl w-full p-0">
-                      <img 
-                        src="/lovable-uploads/5c360a7b-0769-46b4-a4cc-0eba0ec52e9a.png" 
-                        alt="CAT Process Diagram showing Stage 1 Conditioning and Stage 2 Catalytic Advanced Oxidation"
-                        className="w-full h-auto"
-                      />
-                    </DialogContent>
-                  </Dialog>
-                </CardContent>
-              </Card>
-              
-              {/* Right side - Carousel */}
-              <Card className="p-6 relative">
-                <CardContent className="p-0">
-                  <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-xl font-semibold">{carouselContent[currentSlide].title}</h4>
-                    <div className="flex gap-2">
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        onClick={prevSlide}
-                        className="h-8 w-8 p-0"
-                      >
-                        <ChevronLeft className="h-4 w-4" />
-                      </Button>
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        onClick={nextSlide}
-                        className="h-8 w-8 p-0"
-                      >
-                        <ChevronRight className="h-4 w-4" />
-                      </Button>
+                      </DialogContent>
+                    </Dialog>
+                  </CardContent>
+                </Card>
+                
+                {/* Right side - Carousel */}
+                <Card className="p-6 relative">
+                  <CardContent className="p-0">
+                    <div className="flex items-center justify-between mb-4">
+                      <h4 className="text-xl font-semibold">{carouselContent[currentSlide].title}</h4>
+                      <div className="flex gap-2">
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={prevSlide}
+                          className="h-8 w-8 p-0"
+                        >
+                          <ChevronLeft className="h-4 w-4" />
+                        </Button>
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={nextSlide}
+                          className="h-8 w-8 p-0"
+                        >
+                          <ChevronRight className="h-4 w-4" />
+                        </Button>
+                      </div>
                     </div>
-                  </div>
-                  
-                  <div className="min-h-[300px]">
-                    {carouselContent[currentSlide].content}
-                  </div>
-                  
-                  {/* Dots indicator */}
-                  <div className="flex justify-center gap-2 mt-4">
-                    {carouselContent.map((_, index) => (
-                      <button
-                        key={index}
-                        onClick={() => setCurrentSlide(index)}
-                        className={`w-2 h-2 rounded-full transition-colors ${
-                          index === currentSlide ? 'bg-primary' : 'bg-muted'
-                        }`}
-                      />
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+                    
+                    <div className="min-h-[300px]">
+                      {carouselContent[currentSlide].content}
+                    </div>
+                    
+                    {/* Dots indicator */}
+                    <div className="flex justify-center gap-2 mt-4">
+                      {carouselContent.map((_, index) => (
+                        <button
+                          key={index}
+                          onClick={() => setCurrentSlide(index)}
+                          className={`w-2 h-2 rounded-full transition-colors ${
+                            index === currentSlide ? 'bg-primary' : 'bg-muted'
+                          }`}
+                        />
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
 
           {/* Unique Technological Features */}
-          <div className="mb-16">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-primary mb-6">
-                Unique Technological Features of CAT (Catalytic Advanced Oxidation)
-              </h2>
-              <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
-                Infinite Water's CAT process, based on Catalytic Advanced Oxidation, stands out in the water treatment industry by addressing key limitations of conventional and other advanced methods. Unlike traditional technologies that often transfer pollutants to another phase (e.g., sludge or concentrate) or require high energy/chemical inputs, CAT destroys contaminants in situ through a low-energy catalytic reaction.
-              </p>
-            </div>
+          <div className="bg-primary/5 py-16 -mx-[calc(50vw-50%)] px-[calc(50vw-50%)] mb-16">
+            <div className="max-w-7xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl font-bold text-primary mb-6">
+                  Unique Technological Features of CAT (Catalytic Advanced Oxidation)
+                </h2>
+                <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
+                  Infinite Water's CAT process, based on Catalytic Advanced Oxidation, stands out in the water treatment industry by addressing key limitations of conventional and other advanced methods. Unlike traditional technologies that often transfer pollutants to another phase (e.g., sludge or concentrate) or require high energy/chemical inputs, CAT destroys contaminants in situ through a low-energy catalytic reaction.
+                </p>
+              </div>
 
-            {/* CAT Features Carousel */}
-            <div className="mb-16">
+              {/* CAT Features Carousel */}
               <div className="relative">
                 <div className="overflow-hidden">
                   <div 
@@ -332,96 +338,95 @@ const TechnologySection = () => {
             </div>
           </div>
 
-
-
           {/* Validated Performance */}
-          <div className="mb-16">
-            <h3 className="text-2xl font-bold text-center mb-8">Validated Performance</h3>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-              <Card className="p-6">
-                <CardContent className="p-0">
-                  <h4 className="text-lg font-semibold mb-4">Disinfection Performance</h4>
-                  <p className="text-muted-foreground mb-4">
-                    Independently validated by UNSW Global Water Institute and others. Log Reduction Values (LRV) exceed standards:
-                  </p>
-                  <div className="space-y-4">
-                    <div>
-                      <h5 className="font-medium mb-2">Drinking Water (vs. ADWG):</h5>
-                      <ul className="space-y-1 text-sm text-muted-foreground">
-                        <li>• Bacteria (E. coli): {'>'}4.1 (exceeds 4)</li>
-                        <li>• Viruses (MS2): {'>'}6.3 (exceeds 5)</li>
-                        <li>• Protozoa (Cryptosporidium): {'>'}4.2 (exceeds 4)</li>
-                      </ul>
+          <div className="bg-muted/20 py-16 -mx-[calc(50vw-50%)] px-[calc(50vw-50%)]">
+            <div className="max-w-7xl mx-auto">
+              <h3 className="text-2xl font-bold text-center mb-8">Validated Performance</h3>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <Card className="p-6">
+                  <CardContent className="p-0">
+                    <h4 className="text-lg font-semibold mb-4">Disinfection Performance</h4>
+                    <p className="text-muted-foreground mb-4">
+                      Independently validated by UNSW Global Water Institute and others. Log Reduction Values (LRV) exceed standards:
+                    </p>
+                    <div className="space-y-4">
+                      <div>
+                        <h5 className="font-medium mb-2">Drinking Water (vs. ADWG):</h5>
+                        <ul className="space-y-1 text-sm text-muted-foreground">
+                          <li>• Bacteria (E. coli): {'>'}4.1 (exceeds 4)</li>
+                          <li>• Viruses (MS2): {'>'}6.3 (exceeds 5)</li>
+                          <li>• Protozoa (Cryptosporidium): {'>'}4.2 (exceeds 4)</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h5 className="font-medium mb-2">Recycled Water (vs. AGWR/QLD A+):</h5>
+                        <ul className="space-y-1 text-sm text-muted-foreground">
+                          <li>• Bacteria: {'>'}5.7 (exceeds 5.0)</li>
+                          <li>• Viruses: {'>'}8.0 (exceeds 6.5)</li>
+                          <li>• Protozoa: ≥4.6 (meets/exceeds 5.0)</li>
+                        </ul>
+                      </div>
                     </div>
-                    <div>
-                      <h5 className="font-medium mb-2">Recycled Water (vs. AGWR/QLD A+):</h5>
-                      <ul className="space-y-1 text-sm text-muted-foreground">
-                        <li>• Bacteria: {'>'}5.7 (exceeds 5.0)</li>
-                        <li>• Viruses: {'>'}8.0 (exceeds 6.5)</li>
-                        <li>• Protozoa: ≥4.6 (meets/exceeds 5.0)</li>
-                      </ul>
+                  </CardContent>
+                </Card>
+                <Card className="p-6">
+                  <CardContent className="p-0">
+                    <h4 className="text-lg font-semibold mb-4">Surface Water Treatment Results</h4>
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-sm">
+                        <thead>
+                          <tr className="border-b">
+                            <th className="text-left py-2">Parameter</th>
+                            <th className="text-left py-2">Raw</th>
+                            <th className="text-left py-2">Treated</th>
+                            <th className="text-left py-2">Reduction</th>
+                          </tr>
+                        </thead>
+                        <tbody className="text-muted-foreground">
+                          <tr className="border-b">
+                            <td className="py-1">DOC (mg/L)</td>
+                            <td>8.7</td>
+                            <td>2.7</td>
+                            <td className="text-primary font-medium">69.0%</td>
+                          </tr>
+                          <tr className="border-b">
+                            <td className="py-1">Turbidity (NTU)</td>
+                            <td>24.7</td>
+                            <td>&lt;0.1</td>
+                            <td className="text-primary font-medium">99.6%</td>
+                          </tr>
+                          <tr className="border-b">
+                            <td className="py-1">Colour (PCU)</td>
+                            <td>100</td>
+                            <td>&lt;1</td>
+                            <td className="text-primary font-medium">99.0%</td>
+                          </tr>
+                          <tr className="border-b">
+                            <td className="py-1">Manganese (mg/L)</td>
+                            <td>0.08</td>
+                            <td>0.02</td>
+                            <td className="text-primary font-medium">75.0%</td>
+                          </tr>
+                          <tr className="border-b">
+                            <td className="py-1">Iron (mg/L)</td>
+                            <td>0.96</td>
+                            <td>0.08</td>
+                            <td className="text-primary font-medium">91.7%</td>
+                          </tr>
+                          <tr>
+                            <td className="py-1">Aluminium (mg/L)</td>
+                            <td>0.87</td>
+                            <td>&lt;0.01</td>
+                            <td className="text-primary font-medium">98.9%</td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card className="p-6">
-                <CardContent className="p-0">
-                  <h4 className="text-lg font-semibold mb-4">Surface Water Treatment Results</h4>
-                  <div className="overflow-x-auto">
-                    <table className="w-full text-sm">
-                      <thead>
-                        <tr className="border-b">
-                          <th className="text-left py-2">Parameter</th>
-                          <th className="text-left py-2">Raw</th>
-                          <th className="text-left py-2">Treated</th>
-                          <th className="text-left py-2">Reduction</th>
-                        </tr>
-                      </thead>
-                      <tbody className="text-muted-foreground">
-                        <tr className="border-b">
-                          <td className="py-1">DOC (mg/L)</td>
-                          <td>8.7</td>
-                          <td>2.7</td>
-                          <td className="text-primary font-medium">69.0%</td>
-                        </tr>
-                        <tr className="border-b">
-                          <td className="py-1">Turbidity (NTU)</td>
-                          <td>24.7</td>
-                          <td>&lt;0.1</td>
-                          <td className="text-primary font-medium">99.6%</td>
-                        </tr>
-                        <tr className="border-b">
-                          <td className="py-1">Colour (PCU)</td>
-                          <td>100</td>
-                          <td>&lt;1</td>
-                          <td className="text-primary font-medium">99.0%</td>
-                        </tr>
-                        <tr className="border-b">
-                          <td className="py-1">Manganese (mg/L)</td>
-                          <td>0.08</td>
-                          <td>0.02</td>
-                          <td className="text-primary font-medium">75.0%</td>
-                        </tr>
-                        <tr className="border-b">
-                          <td className="py-1">Iron (mg/L)</td>
-                          <td>0.96</td>
-                          <td>0.08</td>
-                          <td className="text-primary font-medium">91.7%</td>
-                        </tr>
-                        <tr>
-                          <td className="py-1">Aluminium (mg/L)</td>
-                          <td>0.87</td>
-                          <td>&lt;0.01</td>
-                          <td className="text-primary font-medium">98.9%</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
