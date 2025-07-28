@@ -1,4 +1,4 @@
-import { Droplets, Factory, Leaf, Settings, Zap, Shield, Building } from 'lucide-react';
+import { Droplets, Factory, Leaf, Settings, Zap, Shield, Building, HardHat, Palette, FileText, Cpu, Recycle, Beaker, Server, Sprout, Waves, Gamepad2 } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
@@ -57,11 +57,81 @@ const ServicesSection = () => {
       image: 'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=600&h=400&fit=crop'
     },
     {
-      icon: Leaf,
-      title: 'Leachate',
-      description: 'Advanced leachate treatment solutions for landfill and waste management facilities.',
-      features: ['Chemical Treatment', 'Membrane Filtration', 'Heavy Metal Removal'],
+      icon: HardHat,
+      title: 'Industrial Parks & Landfill Leachate',
+      description: 'Treatment of wastewater from industrial parks and landfill leachate.',
+      features: ['Industrial Wastewater', 'Leachate Treatment', 'Heavy Metal Removal'],
       image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=400&fit=crop'
+    },
+    {
+      icon: Shield,
+      title: 'Metal Plating Wastewater',
+      description: 'Treatment of wastewater from metal plating operations.',
+      features: ['Heavy Metal Removal', 'Electroplating Waste', 'Surface Treatment'],
+      image: 'https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=600&h=400&fit=crop'
+    },
+    {
+      icon: Palette,
+      title: 'Textile Industry Wastewater',
+      description: 'Treatment of wastewater from textile industry operations.',
+      features: ['Dye Removal', 'Color Treatment', 'Fiber Processing'],
+      image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&h=400&fit=crop'
+    },
+    {
+      icon: FileText,
+      title: 'Pulp & Paper Industry',
+      description: 'Treatment of wastewater from pulp and paper industry processes.',
+      features: ['Lignin Removal', 'Bleaching Chemicals', 'Fiber Recovery'],
+      image: 'https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=600&h=400&fit=crop'
+    },
+    {
+      icon: Cpu,
+      title: 'Microelectronics & Semiconductor',
+      description: 'Treatment of wastewater from microelectronics and semiconductor industry.',
+      features: ['Chemical Cleaning', 'Ultra-pure Requirements', 'Process Water'],
+      image: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=600&h=400&fit=crop'
+    },
+    {
+      icon: Recycle,
+      title: 'Municipal Secondary Effluent',
+      description: 'Treatment of utility municipal wastewater, secondary effluent for reuse.',
+      features: ['Effluent Polishing', 'Water Reuse', 'Municipal Treatment'],
+      image: 'https://images.unsplash.com/photo-1572254465217-6758a7f8b0e4?w=600&h=400&fit=crop'
+    },
+    {
+      icon: Beaker,
+      title: 'High Purity & Ultrapure Water',
+      description: 'Production of high purity and ultrapure water for industrial applications.',
+      features: ['Ultrapure Production', 'Industrial Grade', 'Process Water'],
+      image: 'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=600&h=400&fit=crop'
+    },
+    {
+      icon: Server,
+      title: 'Cooling Towers & Data Centers',
+      description: 'Treatment of water for cooling towers & data center applications.',
+      features: ['Cooling Systems', 'Data Center Water', 'Temperature Control'],
+      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop'
+    },
+    {
+      icon: Sprout,
+      title: 'Irrigation Water Treatment',
+      description: 'Treatment of water for irrigation and agricultural applications.',
+      features: ['Agricultural Water', 'Crop Irrigation', 'Soil Health'],
+      image: 'https://images.unsplash.com/photo-1574263867128-ed92a33e7da7?w=600&h=400&fit=crop'
+    },
+    {
+      icon: Waves,
+      title: 'Nutrient Removal & Algal Bloom Prevention',
+      description: 'Treatment of water for nutrient removal – prevention and remediation of algal blooms.',
+      features: ['Phosphorus Removal', 'Nitrogen Control', 'Algae Prevention'],
+      image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=400&fit=crop'
+    },
+    {
+      icon: Gamepad2,
+      title: 'Recreational Water & Features',
+      description: 'Treatment of water for recreational water and water features.',
+      features: ['Swimming Pools', 'Water Features', 'Recreation Safety'],
+      image: 'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&h=400&fit=crop'
     }
   ];
 
