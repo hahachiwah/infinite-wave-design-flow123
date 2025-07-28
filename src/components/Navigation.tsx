@@ -26,7 +26,7 @@ const Navigation = () => {
               <img 
                 src="/lovable-uploads/18223f46-e114-4f16-8a48-67997d32111a.png" 
                 alt="infiniteWater" 
-                className="h-8 w-auto" 
+                className="h-12 w-auto" 
               />
             </Link>
           </div>
