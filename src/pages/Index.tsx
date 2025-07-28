@@ -8,7 +8,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Navigation />
-      <HeroIntroSection videoSrc="/path-to-your-video.mp4" />
+      <HeroIntroSection videoSrc="/lovable-uploads/infinite-water_header.mp4" />
       <SectionsOverview />
       <PartnersSection />
       <Footer />
