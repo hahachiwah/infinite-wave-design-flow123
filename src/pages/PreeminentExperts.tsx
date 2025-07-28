@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import UnifiedHeroSection from '@/components/UnifiedHeroSection';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { ArrowLeft, Star, Users, Award, ChevronLeft, ChevronRight } from 'lucide-react';
@@ -23,14 +24,15 @@ const PreeminentExperts = () => {
   return (
     <div className="min-h-screen">
       <Navigation />
-      <main className="pt-16">
+      <main>
+        <UnifiedHeroSection 
+          title="Meet Our Experts"
+          subtitle="Leading scientists and engineers"
+          description="Decades of experience at the forefront of water treatment technology, driving innovation and scientific breakthroughs."
+          videoSrc="/lovable-uploads/infinite-water_header.mp4"
+        />
         {/* Hero Section */}
         <section className="py-24 bg-gradient-to-br from-background to-muted/20 relative">
-          <div 
-            className="absolute inset-0 bg-cover bg-center opacity-20"
-            style={{ backgroundImage: 'url(/lovable-uploads/79cfa447-bb10-4f4a-8bb2-bf949de10ab9.png)' }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-background/80 to-muted/60" />
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-16">
               <div className="mb-8">
@@ -39,12 +41,6 @@ const PreeminentExperts = () => {
                   Back to About Us
                 </Link>
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-                Meet Our <span className="text-primary">Experts</span>
-              </h1>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-                Leading scientists and engineers with decades of experience at the forefront of water treatment technology.
-              </p>
               
               {/* Expert Navigation */}
               <div className="flex items-center justify-center gap-4">

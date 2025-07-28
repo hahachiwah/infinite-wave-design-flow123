@@ -1,5 +1,6 @@
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import UnifiedHeroSection from '@/components/UnifiedHeroSection';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Building, Users, MapPin } from 'lucide-react';
 
@@ -43,25 +44,13 @@ const Municipal = () => {
   return (
     <div className="min-h-screen">
       <Navigation />
-      <main className="pt-16">
-        {/* Hero Section */}
-        <section 
-          className="relative py-32 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=1920&h=800&fit=crop')"
-          }}
-        >
-          <div className="container mx-auto px-4">
-            <div className="text-center max-w-4xl mx-auto text-white">
-              <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                Municipal Water <span className="text-primary">Solutions</span>
-              </h1>
-              <p className="text-xl md:text-2xl mb-8 text-white/90">
-                Comprehensive water treatment solutions for municipal applications across remote communities, regional councils, and urban utilities.
-              </p>
-            </div>
-          </div>
-        </section>
+      <main>
+        <UnifiedHeroSection 
+          title="Municipal Water Solutions"
+          subtitle="Comprehensive solutions for every community"
+          description="From remote communities to urban utilities, our advanced technologies deliver reliable, efficient, and sustainable municipal water treatment solutions."
+          videoSrc="/lovable-uploads/infinite-water_header.mp4"
+        />
 
         {/* Content Sections */}
         <section className="py-20 bg-background">
