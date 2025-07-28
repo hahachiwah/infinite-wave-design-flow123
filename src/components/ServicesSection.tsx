@@ -11,13 +11,6 @@ const ServicesSection = () => {
 
   const portableWaterServices = [
     {
-      icon: Droplets,
-      title: 'Desalination',
-      description: 'Advanced seawater and brackish water desalination systems for pure drinking water.',
-      features: ['Reverse Osmosis', 'Multi-Stage Flash', 'Energy Recovery'],
-      image: 'https://images.unsplash.com/photo-1500375592092-40095x5909?w=600&h=400&fit=crop'
-    },
-    {
       icon: Building,
       title: 'Municipal',
       description: 'Comprehensive water treatment solutions for municipal applications across remote communities, regional councils, and urban utilities.',
