@@ -141,7 +141,7 @@ const TechnologySection = () => {
 
         <div className="max-w-7xl mx-auto">
           {/* Key Features */}
-          <div className="bg-muted/30 py-16 -mx-[calc(50vw-50%)] px-[calc(50vw-50%)] mb-16">
+          <div className="bg-muted/50 py-16 -mx-[calc(50vw-50%)] px-[calc(50vw-50%)] mb-16">
             <div className="max-w-7xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <Card className="p-6 hover:shadow-large transition-smooth">
@@ -246,7 +246,7 @@ const TechnologySection = () => {
           </div>
 
           {/* Unique Technological Features */}
-          <div className="bg-primary/5 py-16 -mx-[calc(50vw-50%)] px-[calc(50vw-50%)] mb-16">
+          <div className="bg-primary/10 py-16 -mx-[calc(50vw-50%)] px-[calc(50vw-50%)] mb-16">
             <div className="max-w-7xl mx-auto">
               <div className="text-center mb-16">
                 <h2 className="text-4xl font-bold text-primary mb-6">
@@ -339,7 +339,7 @@ const TechnologySection = () => {
           </div>
 
           {/* Validated Performance */}
-          <div className="bg-muted/20 py-16 -mx-[calc(50vw-50%)] px-[calc(50vw-50%)]">
+          <div className="bg-muted/40 py-16 -mx-[calc(50vw-50%)] px-[calc(50vw-50%)]">
             <div className="max-w-7xl mx-auto">
               <h3 className="text-2xl font-bold text-center mb-8">Validated Performance</h3>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
