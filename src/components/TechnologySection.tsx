@@ -1,7 +1,87 @@
-import { Zap, Target, Award, CheckCircle, BarChart3, FlaskConical } from 'lucide-react';
+import { Zap, Target, Award, CheckCircle, BarChart3, FlaskConical, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { useState } from 'react';
 
 const TechnologySection = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const carouselContent = [
+    {
+      title: "Overall Process Overview",
+      content: (
+        <div className="space-y-4">
+          <div>
+            <h5 className="font-semibold mb-2">Core Mechanism</h5>
+            <p className="text-muted-foreground text-sm">
+              Water flows through a series of tanks where proprietary chemicals and catalysts facilitate oxidation. The catalyst (multi-metal oxide granules) is not consumed but accelerates reactions by splitting water (H₂O → H⁺ + OH⁻) and decomposing oxygen donors (e.g., NaOCl → NaCl + O, or H₂O₂/permanganate) to release atomic oxygen, forming ·OH radicals (redox potential 2.8V).
+            </p>
+          </div>
+          <div>
+            <h5 className="font-semibold mb-2">Key Features</h5>
+            <ul className="text-muted-foreground text-sm space-y-1">
+              <li>• Energy/Cost Efficiency: ~0.1 kWh/m³ (vs. 2–5 kWh/m³ for RO or UV-based AOPs)</li>
+              <li>• Validation: Independently tested (UNSW Global Water Institute)</li>
+              <li>• Scalability: Modular design from small communities to industrial wastewater</li>
+            </ul>
+          </div>
+        </div>
+      )
+    },
+    {
+      title: "Stage 1: Conditioning",
+      content: (
+        <div className="space-y-4">
+          <div>
+            <h5 className="font-semibold mb-2">Components</h5>
+            <ul className="text-muted-foreground text-sm space-y-1">
+              <li>• <strong>Pump:</strong> Raw water pumped into Conditioning Tank</li>
+              <li>• <strong>Chemicals:</strong> Proprietary reagents for pH adjustment</li>
+              <li>• <strong>Conditioning Tank:</strong> Mixing vessel where reactions begin</li>
+              <li>• <strong>Drainage:</strong> Bottom settling and disposal of large solids</li>
+            </ul>
+          </div>
+          <div>
+            <h5 className="font-semibold mb-2">How It Works</h5>
+            <p className="text-muted-foreground text-sm">
+              Raw water is dosed with chemicals to correct pH (6–8) and initiate preliminary oxidation. Large suspended solids settle via gravity, reducing turbidity and preventing clogging. Residence time: 3–6 minutes with mixing for homogeneity.
+            </p>
+          </div>
+        </div>
+      )
+    },
+    {
+      title: "Stage 2: Catalytic Advanced Oxidation",
+      content: (
+        <div className="space-y-4">
+          <div>
+            <h5 className="font-semibold mb-2">CAO Reactor</h5>
+            <p className="text-muted-foreground text-sm">
+              Main vessel containing the catalyst bed where conditioned water flows through multi-metal oxide granules (Mn/Fe-based catalysts) in a fixed bed setup similar to a filter.
+            </p>
+          </div>
+          <div>
+            <h5 className="font-semibold mb-2">Key Reactions</h5>
+            <ul className="text-muted-foreground text-sm space-y-1">
+              <li>• Radical generation: Catalyst sites split H₂O and donors</li>
+              <li>• Pathogen destruction: {'>'}6 log reduction for viruses</li>
+              <li>• Heavy metal precipitation: Fe²⁺ → Fe³⁺ oxidation</li>
+              <li>• Chemical/organic degradation: 69–99% reduction in DOC, color, turbidity</li>
+            </ul>
+          </div>
+        </div>
+      )
+    }
+  ];
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % carouselContent.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + carouselContent.length) % carouselContent.length);
+  };
+
   return (
     <section id="technology" className="py-24 gradient-subtle">
       <div className="w-full px-2.5">
@@ -40,54 +120,64 @@ const TechnologySection = () => {
             </Card>
           </div>
 
-          {/* Technologies of Basic CAT */}
+          {/* Core Concept of CAT */}
           <div className="mb-16">
-            <h3 className="text-2xl font-bold text-center mb-8">Technologies of Basic CAT</h3>
+            <h3 className="text-2xl font-bold text-center mb-8">Core Concept of CAT</h3>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-              <Card className="p-8">
+              {/* Left side - Image taking full card area */}
+              <Card className="p-0 overflow-hidden">
+                <CardContent className="p-0 h-full">
+                  <img 
+                    src="/lovable-uploads/5c360a7b-0769-46b4-a4cc-0eba0ec52e9a.png" 
+                    alt="CAT Process Diagram showing Stage 1 Conditioning and Stage 2 Catalytic Advanced Oxidation"
+                    className="w-full h-full object-cover"
+                  />
+                </CardContent>
+              </Card>
+              
+              {/* Right side - Carousel */}
+              <Card className="p-6 relative">
                 <CardContent className="p-0">
-                  <h4 className="text-xl font-semibold mb-6">CAT Catalytic Tank process:</h4>
-                  <div className="space-y-6">
-                    <div className="flex items-start gap-4">
-                      <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-primary-foreground text-sm font-bold mt-1">1</div>
-                      <p className="text-muted-foreground">
-                        Feed water with oxygen donor chemical enters the CAT Catalytic Tank packed with catalytic media
-                      </p>
+                  <div className="flex items-center justify-between mb-4">
+                    <h4 className="text-xl font-semibold">{carouselContent[currentSlide].title}</h4>
+                    <div className="flex gap-2">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={prevSlide}
+                        className="h-8 w-8 p-0"
+                      >
+                        <ChevronLeft className="h-4 w-4" />
+                      </Button>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={nextSlide}
+                        className="h-8 w-8 p-0"
+                      >
+                        <ChevronRight className="h-4 w-4" />
+                      </Button>
                     </div>
-                    <div className="flex items-start gap-4">
-                      <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-primary-foreground text-sm font-bold mt-1">2</div>
-                      <p className="text-muted-foreground">
-                        Hydroxyl radical (•OH) is generated during the Advanced Oxidation Process (AOP), which is one of the most powerful oxidant available in nature with a redox potential of 2.8V.
-                      </p>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-primary-foreground text-sm font-bold mt-1">3</div>
-                      <p className="text-muted-foreground">
-                        Hydroxyl radical are effective in breaking down a wide range of organic and inorganic contaminants for the degradation of pollutants in drinking water and wastewater treatment.
-                      </p>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-primary-foreground text-sm font-bold mt-1">4</div>
-                      <p className="text-muted-foreground">
-                        Organic molecules are broken down to form carbon dioxide (CO₂) & water (H₂O) + Salt
-                      </p>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-primary-foreground text-sm font-bold mt-1">5</div>
-                      <p className="text-muted-foreground">
-                        Treated water leaving the catalytic tank
-                      </p>
-                    </div>
+                  </div>
+                  
+                  <div className="min-h-[300px]">
+                    {carouselContent[currentSlide].content}
+                  </div>
+                  
+                  {/* Dots indicator */}
+                  <div className="flex justify-center gap-2 mt-4">
+                    {carouselContent.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setCurrentSlide(index)}
+                        className={`w-2 h-2 rounded-full transition-colors ${
+                          index === currentSlide ? 'bg-primary' : 'bg-muted'
+                        }`}
+                      />
+                    ))}
                   </div>
                 </CardContent>
               </Card>
-              <div className="flex items-center justify-center">
-                <img 
-                  src="/lovable-uploads/5c360a7b-0769-46b4-a4cc-0eba0ec52e9a.png" 
-                  alt="CAT Process Diagram showing Stage 1 Conditioning and Stage 2 Catalytic Advanced Oxidation"
-                  className="w-full h-auto rounded-lg shadow-lg"
-                />
-              </div>
             </div>
           </div>
 
@@ -213,47 +303,6 @@ const TechnologySection = () => {
             </Card>
           </div>
 
-          {/* Core Concept of CAT */}
-          <div className="mb-16">
-            <h3 className="text-2xl font-bold text-center mb-8">Core Concept of CAT</h3>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-              <Card className="p-6">
-                <CardContent className="p-0">
-                  <h4 className="text-lg font-semibold mb-4">Catalyst Mechanism</h4>
-                  <p className="text-muted-foreground mb-4">
-                    The catalyst accelerates reactions without being consumed. It features a surface with positive metal sites and negative oxygen sites.
-                  </p>
-                  <p className="text-muted-foreground">
-                    Water molecules attach to these sites in a viscous laminar layer, splitting into H⁺ and OH⁻ (H₂O → H⁺ + OH⁻). Injected oxygen donors decompose at the surface, releasing atomic oxygen for oxidation.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="p-6">
-                <CardContent className="p-0">
-                  <h4 className="text-lg font-semibold mb-4">Reactor Setup</h4>
-                  <p className="text-muted-foreground mb-3">
-                    Uses a catalytic reactor with multi-metal oxide granules:
-                  </p>
-                  <ul className="space-y-2 text-muted-foreground text-sm">
-                    <li>• <strong>Normal flow:</strong> Downward through catalytic bed</li>
-                    <li>• <strong>Backwash flow:</strong> Upward to remove retained solids</li>
-                    <li>• <strong>Rinse flow:</strong> Same direction as normal, with filtered water reprocessing</li>
-                  </ul>
-                </CardContent>
-              </Card>
-            </div>
-            <Card className="p-6 bg-primary/5 border-primary/20">
-              <CardContent className="p-0">
-                <h4 className="text-lg font-semibold mb-4 text-primary">Enhancements for Performance</h4>
-                <div className="space-y-3 text-muted-foreground">
-                  <p>• Pre-treat with ozonation to fragment organic molecules, creating charged fragments easier to degrade</p>
-                  <p>• Add potassium permanganate or hydrogen peroxide to raise oxidation-reduction potential (ORP) above +400 mV</p>
-                  <p>• Catalytic metals (Mn, Fe) in bulk water enhance disinfection by attaching to microbes and triggering reactions</p>
-                  <p>• Ozone/H₂O₂/permanganate decompose in reactor, releasing oxygen and precipitating manganese dioxide</p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
 
           {/* How CAT Works */}
           <div className="mb-16">
