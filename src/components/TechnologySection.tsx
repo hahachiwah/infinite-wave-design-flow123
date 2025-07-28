@@ -333,35 +333,6 @@ const TechnologySection = () => {
           </div>
 
 
-          {/* How CAT Works */}
-          <div className="mb-16">
-            <h3 className="text-2xl font-bold text-center mb-8">How CAT Works</h3>
-            <Card className="p-8">
-              <CardContent className="p-0">
-                <h4 className="text-xl font-semibold mb-6">Multi-Functionality</h4>
-                <p className="text-muted-foreground mb-6">
-                  CAT simultaneously performs multiple treatment processes to produce high-quality water from diverse sources:
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="text-center">
-                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-primary-foreground text-xl font-bold mx-auto mb-3">1</div>
-                    <h5 className="font-semibold mb-2">Catalytic Oxidation</h5>
-                    <p className="text-sm text-muted-foreground">For inorganic contaminants (e.g., iron removal via oxidation of colloidal iron)</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-primary-foreground text-xl font-bold mx-auto mb-3">2</div>
-                    <h5 className="font-semibold mb-2">Advanced Oxidation-Reduction</h5>
-                    <p className="text-sm text-muted-foreground">For organic degradation and contaminant destruction</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-primary-foreground text-xl font-bold mx-auto mb-3">3</div>
-                    <h5 className="font-semibold mb-2">Disinfection</h5>
-                    <p className="text-sm text-muted-foreground">Highest log removal credits for pathogens</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
 
           {/* Validated Performance */}
           <div className="mb-16">
@@ -451,41 +422,6 @@ const TechnologySection = () => {
             </div>
           </div>
 
-          {/* Advanced Oxidation Principles */}
-          <div>
-            <Card className="p-8 bg-primary/5 border-primary/20">
-              <CardContent className="p-0">
-                <h3 className="text-2xl font-bold text-primary mb-6">Advanced Oxidation Principles</h3>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  <div>
-                    <h4 className="text-lg font-semibold mb-4">Hydroxyl Radical Role</h4>
-                    <p className="text-muted-foreground mb-4">
-                      The hydroxyl radical (•OH) is a powerful nonselective oxidant (redox potential E° = 2.8V, compared to Cl₂ at 1.36V or NaOCl at 0.95V).
-                    </p>
-                    <p className="text-muted-foreground mb-4">It degrades organics via:</p>
-                    <ul className="space-y-2 text-muted-foreground text-sm">
-                      <li>• Hydrogen abstraction (CH₃OH + •OH → CH₂OH + H₂O)</li>
-                      <li>• Addition at carbon double bonds (CHCl=CCl₂ + •OH → •CHCl-C(OH)Cl₂)</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-semibold mb-4">Degradation Process</h4>
-                    <p className="text-muted-foreground mb-4">
-                      Converts toxic organics to harmless substances (water, CO₂, salts). Analysis shows raw water with high-molecular-weight organic peaks rapidly degrading to low-molecular-weight mineralization.
-                    </p>
-                    <div className="bg-background p-4 rounded-lg font-mono text-sm space-y-2">
-                      <p>CH₃-CH₂-CH=CH- ... CH₂-CO₂H</p>
-                      <p>CH₃OH + •OH → CH₂OH + H₂O</p>
-                      <p>CHCl=CCl₂ + •OH → •CHCl-C(OH)Cl₂</p>
-                    </div>
-                  </div>
-                </div>
-                <p className="text-muted-foreground mt-6">
-                  The definition of advanced oxidation has expanded beyond the hydroxyl radical to include other highly reactive species such as chlorine radicals, superoxide radical, singlet oxygen, and more.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
         </div>
       </div>
     </section>
