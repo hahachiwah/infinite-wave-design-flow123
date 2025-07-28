@@ -10,7 +10,7 @@ const TechnologySection = () => {
             A game-changing <span className="text-primary">AOP Technology</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
-            Hydroxon™ is a water treatment process, an Advanced Oxidation process or AOP, based on Catalytic Advanced Oxidation, Catalytic Oxidation and Co-precipitation with disruptive features.
+            Catalytic Advanced Treatment (CAT) is a water treatment process, an Advanced Oxidation process or AOP, based on Catalytic Advanced Oxidation, Catalytic Oxidation and Co-precipitation with disruptive features.
           </p>
         </div>
 
