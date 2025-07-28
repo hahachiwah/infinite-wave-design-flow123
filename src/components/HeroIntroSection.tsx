@@ -70,7 +70,7 @@ const HeroIntroSection = ({ videoSrc }: { videoSrc?: string }) => {
       onMouseLeave={() => setShowControls(false)}
     >
       {/* Background Video/Image with Overlay */}
-      <div className="absolute inset-0 z-0">
+      {/* <div className="absolute inset-0 z-0">
         {videoSrc ? (
           <>
             <video
@@ -101,7 +101,7 @@ const HeroIntroSection = ({ videoSrc }: { videoSrc?: string }) => {
           />
         )}
         <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/70 to-primary/50"></div>
-      </div>
+      </div> */}
 
       {/* Video Controls */}
       {videoSrc && videoLoaded && (
