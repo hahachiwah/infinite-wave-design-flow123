@@ -12,8 +12,6 @@ const Index = () => {
         title="infiniteWater"
         subtitle="Revolutionizing water treatment with proprietary technology"
         description="Our patented solutions remove the world's most challenging contaminants, delivering safe, clean water for drinking, industrial, and environmental applications."
-        primaryButtonText="Explore Our Solutions"
-        secondaryButtonText="View Case Studies"
         videoSrc="/lovable-uploads/infinite-water_header.mp4"
       />
       <SectionsOverview />
