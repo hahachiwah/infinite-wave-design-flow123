@@ -29,9 +29,13 @@ export const imageMap: Record<string, string> = {
   
   // Case Study Images
   'case-study-copper-mine': '82b47e25-afe6-415a-9d49-1a0528920cad.png',
+  'copper-mine-townsville': '82b47e25-afe6-415a-9d49-1a0528920cad.png',
   'case-study-packaging-manufacturer': '849bf037-c412-438e-95a1-27eaca8cfe5a.png',
+  'reusable-packaging-manufacturer': '849bf037-c412-438e-95a1-27eaca8cfe5a.png',
   'case-study-dairy-recycling': '8d653f41-3935-45c7-a898-8d75231a5350.png',
+  'dairy-industry-recycling': '8d653f41-3935-45c7-a898-8d75231a5350.png',
   'case-study-bangladesh-water': '65f160dc-4c3c-494d-9e80-541bdc3a2a70.png',
+  'bangladesh-drinking-water': '65f160dc-4c3c-494d-9e80-541bdc3a2a70.png',
   
   // Technology/Equipment Images
   'technology-water-treatment': '477e690f-5885-48a2-b986-85362f3f6caa.png',
