@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 import { CaseStudy } from '@/data/caseStudies';
 import { getCategoryColor } from '@/lib/categoryUtils';
+import { getImagePath } from '@/data/images';
 
 interface CaseStudyCardProps {
   study: CaseStudy;
@@ -12,11 +13,14 @@ interface CaseStudyCardProps {
 }
 
 export const CaseStudyCard = ({ study, index }: CaseStudyCardProps) => {
+  const imagePath = getImagePath(study.imageName, 'default-case-study');
+  const imageUrl = imagePath || `https://images.unsplash.com/${study.image}?auto=format&fit=crop&w=600&h=400`;
+  
   return (
     <Card key={index} className="group hover:shadow-large transition-smooth overflow-hidden">
       <div className="aspect-video relative overflow-hidden">
         <img
-          src={`https://images.unsplash.com/${study.image}?auto=format&fit=crop&w=600&h=400`}
+          src={imageUrl}
           alt={study.title}
           className="w-full h-full object-cover group-hover:scale-105 transition-smooth"
         />

@@ -11,7 +11,8 @@ export interface CaseStudy {
   };
   technology: string;
   technologyLink: string;
-  image: string;
+  imageName: string;  // Friendly name for non-technical users
+  image: string;      // UUID for backward compatibility
 }
 
 export const caseStudiesData: CaseStudy[] = [
@@ -28,6 +29,7 @@ export const caseStudiesData: CaseStudy[] = [
     },
     technology: 'Advanced Catalytic Oxidation',
     technologyLink: '/technology',
+    imageName: 'copper-mine-townsville',
     image: 'photo-1581092795360-fd1ca04f0952'
   },
   {
@@ -43,6 +45,7 @@ export const caseStudiesData: CaseStudy[] = [
     },
     technology: 'Hydroxon™',
     technologyLink: '/technology',
+    imageName: 'reusable-packaging-manufacturer',
     image: 'photo-1498050108023-c5249f4df085'
   },
   {
@@ -58,6 +61,7 @@ export const caseStudiesData: CaseStudy[] = [
     },
     technology: 'Advanced Oxidation Processes (AOP)',
     technologyLink: '/technology',
+    imageName: 'dairy-industry-recycling',
     image: 'photo-1506744038136-46273834b3fb'
   },
   {
@@ -73,6 +77,7 @@ export const caseStudiesData: CaseStudy[] = [
     },
     technology: 'Advanced Catalytic Oxidation',
     technologyLink: '/technology',
+    imageName: 'bangladesh-drinking-water',
     image: 'photo-1519389950473-47ba0277781c'
   }
 ];
