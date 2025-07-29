@@ -17,11 +17,11 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-border/20">
-      <div className="container mx-auto px-2 sm:px-4 lg:px-6">
-        <div className="flex items-center justify-between h-16">
+    <nav className="fixed  top-0 left-0 right-0 z-50 glass-effect border-b border-border/20">
+      {/* <div className="container mx-auto px-2 sm:px-4 lg:px-6"> */}
+        <div className="flex w-full items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex-shrink-0 -ml-2">
+          <div className="flex-shrink-0 ml-2">
             <Link to="/" className="flex items-center">
               <img 
                 src="/lovable-uploads/18223f46-e114-4f16-8a48-67997d32111a.png" 
@@ -75,7 +75,7 @@ const Navigation = () => {
             </div>
           </div>
         )}
-      </div>
+      {/* </div> */}
     </nav>
   );
 };
