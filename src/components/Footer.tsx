@@ -28,18 +28,13 @@ const Footer = () => {
       title: 'Resources',
       links: [
         { text: 'Case Studies', href: '/case-studies' },
-        { text: 'Technical Papers', href: '#' },
-        { text: 'Documentation', href: '#' },
-        { text: 'Support', href: '/contact' },
-        { text: 'Training', href: '#' }
+        { text: 'Support', href: '/contact' }
       ]
     },
     {
       title: 'Company',
       links: [
         { text: 'About Us', href: '/about-us' },
-        { text: 'Careers', href: '#' },
-        { text: 'News', href: '#' },
         { text: 'Partners', href: '/about-us' },
         { text: 'Contact', href: '/contact' }
       ]
