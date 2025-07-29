@@ -70,7 +70,7 @@ const ContaminantsSection = () => {
                 <h3 className="text-xl font-bold text-foreground mb-3">{contaminant.title}</h3>
                 <p className="text-muted-foreground mb-4 leading-relaxed">{contaminant.description}</p>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium text-primary">{contaminant.technology}</span>
+                  {/* <span className="text-sm font-medium text-primary">{contaminant.technology}</span> */}
                   <Link 
                     to={contaminant.technologyLink} 
                     className="text-sm text-primary hover:text-primary/80 transition-colors underline"
