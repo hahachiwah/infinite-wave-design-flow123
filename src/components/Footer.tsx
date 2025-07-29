@@ -3,43 +3,7 @@ import { Button } from '@/components/ui/button';
 import { getImagePath } from '@/data/images';
 
 const Footer = () => {
-  const footerSections = [
-    {
-      title: 'Solutions',
-      links: [
-        { text: 'Water Treatment', href: '/technology' },
-        { text: 'Wastewater Management', href: '/technology' },
-        { text: 'Industrial Solutions', href: '/applications' },
-        { text: 'Municipal Systems', href: '/municipal' },
-        { text: 'Custom Engineering', href: '/technology' }
-      ]
-    },
-    {
-      title: 'Industries',
-      links: [
-        { text: 'Municipal', href: '/municipal' },
-        { text: 'Mining', href: '/applications' },
-        { text: 'Food & Beverage', href: '/applications' },
-        { text: 'Manufacturing', href: '/applications' },
-        { text: 'Agriculture', href: '/applications' }
-      ]
-    },
-    {
-      title: 'Resources',
-      links: [
-        { text: 'Case Studies', href: '/case-studies' },
-        { text: 'Support', href: '/contact' }
-      ]
-    },
-    {
-      title: 'Company',
-      links: [
-        { text: 'About Us', href: '/about-us' },
-        { text: 'Partners', href: '/about-us' },
-        { text: 'Contact', href: '/contact' }
-      ]
-    }
-  ];
+  const footerSections = [];
 
   const socialLinks = [
     { icon: Linkedin, href: '#', label: 'LinkedIn' },
