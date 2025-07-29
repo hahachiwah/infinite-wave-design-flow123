@@ -61,7 +61,7 @@ export const CaseStudyCard = ({ study, index }: CaseStudyCardProps) => {
           </div>
         </div>
 
-        <div className="mt-4 p-4 bg-primary/5 rounded-lg border border-primary/10">
+        {/* <div className="mt-4 p-4 bg-primary/5 rounded-lg border border-primary/10">
           <h4 className="font-semibold text-foreground mb-2">Patented Technology Used:</h4>
           <div className="flex items-center justify-between">
             <span className="text-primary font-medium">{study.technology}</span>
@@ -77,7 +77,7 @@ export const CaseStudyCard = ({ study, index }: CaseStudyCardProps) => {
         <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-base">
           View Case Study
           <ArrowRight className="ml-2 h-4 w-4" />
-        </Button>
+        </Button> */}
       </CardContent>
     </Card>
   );
