@@ -104,16 +104,16 @@ const UnifiedHeroSection = ({
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in delay-300">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in  animate-duration-500 ">
             {title}
           </h1>
           {subtitle && (
-            <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed animate-fade-in delay-1000">
+            <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed animate-fade-in animate-duration-500   animate-delay-1000">
               {subtitle}
             </p>
           )}
           {description && (
-            <p className="text-lg md:text-xl text-white/80 mb-12 max-w-3xl mx-auto animate-fade-in delay-2000">
+            <p className="text-lg md:text-xl text-white/80 mb-12 max-w-3xl mx-auto animate-fade-in animate-duration-500  animate-delay-2000">
               {description}
             </p>
           )}
