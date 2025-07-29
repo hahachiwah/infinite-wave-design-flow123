@@ -7,41 +7,41 @@ const Footer = () => {
     {
       title: 'Solutions',
       links: [
-        'Water Treatment',
-        'Wastewater Management',
-        'Industrial Solutions',
-        'Municipal Systems',
-        'Custom Engineering'
+        { text: 'Water Treatment', href: '/technology' },
+        { text: 'Wastewater Management', href: '/technology' },
+        { text: 'Industrial Solutions', href: '/applications' },
+        { text: 'Municipal Systems', href: '/municipal' },
+        { text: 'Custom Engineering', href: '/technology' }
       ]
     },
     {
       title: 'Industries',
       links: [
-        'Municipal',
-        'Mining',
-        'Food & Beverage',
-        'Manufacturing',
-        'Agriculture'
+        { text: 'Municipal', href: '/municipal' },
+        { text: 'Mining', href: '/applications' },
+        { text: 'Food & Beverage', href: '/applications' },
+        { text: 'Manufacturing', href: '/applications' },
+        { text: 'Agriculture', href: '/applications' }
       ]
     },
     {
       title: 'Resources',
       links: [
-        'Case Studies',
-        'Technical Papers',
-        'Documentation',
-        'Support',
-        'Training'
+        { text: 'Case Studies', href: '/case-studies' },
+        { text: 'Technical Papers', href: '#' },
+        { text: 'Documentation', href: '#' },
+        { text: 'Support', href: '/contact' },
+        { text: 'Training', href: '#' }
       ]
     },
     {
       title: 'Company',
       links: [
-        'About Us',
-        'Careers',
-        'News',
-        'Partners',
-        'Contact'
+        { text: 'About Us', href: '/about-us' },
+        { text: 'Careers', href: '#' },
+        { text: 'News', href: '#' },
+        { text: 'Partners', href: '/about-us' },
+        { text: 'Contact', href: '/contact' }
       ]
     }
   ];
@@ -113,10 +113,10 @@ const Footer = () => {
                   {section.links.map((link, linkIndex) => (
                     <li key={linkIndex}>
                       <a
-                        href="#"
+                        href={link.href}
                         className="text-background/80 hover:text-background transition-colors text-sm"
                       >
-                        {link}
+                        {link.text}
                       </a>
                     </li>
                   ))}
