@@ -113,8 +113,8 @@ const UnifiedHeroSection = ({
             </p>
           )}
           {description && (
-            <p className="text-lg md:text-xl text-white/80 mb-12 max-w-3xl mx-auto animate-fade-in delay-1500">
-              {description}aaa
+            <p className="text-lg md:text-xl text-white/80 mb-12 max-w-3xl mx-auto animate-fade-in delay-200">
+              {description}
             </p>
           )}
           
