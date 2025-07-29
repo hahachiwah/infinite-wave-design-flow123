@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import LogoBlack from '@/assets/Infinite_Water_Logo_Black.png';
+import { getImagePath } from '@/data/images';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,7 +24,7 @@ const Navigation = () => {
           <div className="flex-shrink-0 ml-2">
             <Link to="/" className="flex items-center">
               <img 
-                src="/lovable-uploads/18223f46-e114-4f16-8a48-67997d32111a.png" 
+                src={getImagePath('infinite-water-logo') || ''} 
                 alt="Infinite Water" 
                 className="h-12 w-auto" 
               />

@@ -1,10 +1,62 @@
 # Content Editing Guide for Non-Technical Users
 
-This guide explains how to add and edit content for the Infinite Water website without needing technical knowledge.
+This guide helps non-technical users edit website content by modifying data files in the `src/data/` directory. All images are now managed through friendly names instead of complex UUIDs.
+
+## Available Image Names
+
+The following friendly image names are available for use throughout the website:
+
+### Company Images
+- `infinite-water-logo` - Main company logo
+
+### Expert Images
+- `expert-gheorghe` - Gheorghe (Lead Scientist & Engineer)
+- `expert-yk-ip` - YK IP (CEO & Managing Director)
+- `expert-daniel-jin` - Daniel Jin (Chairman)
+- `expert-felix-wong` - Felix Wong (Adjunct Professor)
+
+### Partner Images
+- `partner-university-queensland` - University of Queensland logo
+- `partner-unsw-sydney` - UNSW Sydney logo
+- `partner-uts-sydney` - UTS Sydney logo
+- `partner-water-corporation` - Water Corporation logo
+- `partner-westland-milk` - Westland Milk Products logo
+- `partner-xstrata` - Xstrata logo
+- `partner-alano` - Alano logo
+- `partner-australian-aid` - Australian Aid logo
+- `partner-freedom-lifestyle` - Freedom Lifestyle Villages logo
+- `partner-fonterra` - Fonterra logo
+- `partner-multiplex` - Multiplex logo
+- `partner-narromine-shire` - Narromine Shire Council logo
+- `partner-oji` - OJI logo
+- `partner-schutz` - Schutz logo
+- `partner-sealed-air` - Sealed Air logo
+- `partner-sydney-water` - Sydney Water logo
+
+### Case Study Images
+- `case-study-copper-mine` - Copper mine project image
+- `case-study-packaging-manufacturer` - Packaging manufacturer project
+- `case-study-dairy-recycling` - Dairy industry recycling project
+- `case-study-bangladesh-water` - Bangladesh drinking water project
+
+### Technology Images
+- `technology-water-treatment` - Water treatment facility
+- `technology-industrial-plant` - Industrial plant equipment
+- `technology-laboratory` - Laboratory equipment
+- `technology-mining-operation` - Mining operation setup
+
+### Default/Fallback Images
+- `default-case-study` - Default image for case studies
+- `default-expert` - Default image for experts
+- `default-partner` - Default image for partners
+- `default-technology` - Default image for technology sections
+
+### Video Files
+- `header-video` - Main header video for hero sections
 
 ## Overview
 
-All website content is now stored in easy-to-edit data files located in the `src/data/` folder. You can add new content or modify existing content by editing these files.
+All website content is now stored in easy-to-edit data files located in the `src/data/` folder. You can add new content or modify existing content by editing these files using the friendly image names listed above.
 
 ## Files You Can Edit
 
@@ -82,7 +134,8 @@ Add a new object to the `caseStudiesData` array:
   },
   technology: 'Technology Used',
   technologyLink: '/technology', // Link to technology page
-  image: 'image-identifier' // For technical team to add images
+  imageName: 'friendly-image-name', // Use one from the Available Image Names list
+  image: 'fallback-image-identifier' // Fallback for external images
 }
 ```
 
@@ -138,26 +191,53 @@ For contaminants, you can use these icons:
 
 ## Getting Help
 
-If you need to:
-- Add images to case studies
-- Create new pages
-- Modify the website structure
-- Add new icon types
+If you need assistance with:
+- **Adding new images**: Contact the technical team to upload and assign friendly names
+- **Creating new pages**: Technical team required for structural changes
+- **Modifying website layout**: Technical team required for design changes
+- **Adding new data fields**: Technical team required for schema updates
 
-Please contact the technical team with your requirements.
+## Using Images in Content
+
+When referencing images in any content:
+
+1. **For new content**: Choose an appropriate friendly name from the Available Image Names list
+2. **For new images**: Contact the technical team to add new images and assign friendly names
+3. **Always use friendly names**: Never use UUIDs directly in content
+
+Example:
+```javascript
+imageName: "case-study-copper-mine" // ✅ Good
+imageName: "82b47e25-afe6-415a-9d49-1a0528920cad.png" // ❌ Bad
+```
 
 ## Important Notes
 
-1. **Always backup**: Before making changes, save a copy of the original file
-2. **Test changes**: After editing, ask the technical team to verify the website still works
-3. **Consistent formatting**: Follow the exact format shown in examples
-4. **Required fields**: Don't remove required fields like `id`, `title`, `description`
-5. **URLs**: When adding new contaminants, ensure the URL path matches the `id` field
+### Before Making Changes
+- **Backup**: Always backup files before editing
+- **Test**: Preview changes before publishing
+- **Consistency**: Maintain consistent formatting and style
+- **Required Fields**: Never remove required fields (marked without "?")
+- **Image Names**: Always use friendly names from the approved list
 
-## Common Mistakes to Avoid
+### Common Mistakes to Avoid
+- Using UUIDs instead of friendly image names
+- Forgetting commas between array items
+- Removing quotation marks around strings
+- Changing the structure of existing objects
+- Using special characters in IDs or routes
+- Duplicating IDs or routes across different items
 
-- Don't use special characters in `id` fields (use lowercase letters, numbers, and hyphens only)
-- Don't forget commas after each array item
-- Don't remove quotation marks around text
-- Don't change the structure of the objects, only the content
-- Don't use the same `id` for multiple items
+### Adding New Searchable Tags
+To add new tags for case studies, update the `caseStudyTags` array in `src/data/caseStudies.ts`:
+
+```javascript
+export const caseStudyTags = [
+  'Water Treatment',
+  'Industrial',
+  'Municipal',
+  'Your New Tag' // Add new tags here
+];
+```
+
+Remember: Changes to data files will automatically update the website. Always double-check your changes before saving!

@@ -1,5 +1,6 @@
 import { Droplets, Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { getImagePath } from '@/data/images';
 
 const Footer = () => {
   const footerSections = [
@@ -61,7 +62,7 @@ const Footer = () => {
             <div className="lg:col-span-2">
               <div className="flex items-center space-x-2 mb-6">
                 <img 
-                  src="/lovable-uploads/18223f46-e114-4f16-8a48-67997d32111a.png" 
+                  src={getImagePath('infinite-water-logo') || ''} 
                   alt="Infinite Water" 
                   className="h-8 w-auto"
                 />

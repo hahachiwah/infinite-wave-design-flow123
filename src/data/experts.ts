@@ -1,4 +1,5 @@
 import { Expert } from '@/types/expert';
+import { getImagePath } from '@/data/images';
 
 export const expertsData: Expert[] = [
   {
@@ -7,7 +8,8 @@ export const expertsData: Expert[] = [
     title: 'Lead Scientist & Engineer',
     bio: 'Gheorghe has worked as a scientist and engineer in fluid engineering, manufacturing engineering, process engineering (water), plant and equipment design and new technology and application development for over 35 years. Gheorghe has been engaged as an advisor on water treatment solutions by various reputable organisations and government agencies including CSIRO, Water Corporation of Western Australia, WA Department of Water and Energy Resources Australia Limited.',
     specialization: 'CAT Process Pioneer',
-    image: '/lovable-uploads/927cd115-1865-4db6-8aca-0fe09ab31ec3.png',
+    imageName: 'expert-gheorghe',
+    image: getImagePath('expert-gheorghe', 'default-expert') || '',
     category: 'preeminent-experts',
     achievements: [
       '35+ years in fluid and process engineering',
@@ -107,7 +109,8 @@ export const expertsData: Expert[] = [
       'YK believes strongly in Infinite Water\'s vision to combat global water access and scarcity. Recognizing the team\'s passion and commitment to using their technology to help those in need of healthy drinking water and to treat waste water to improve the environment, YK has become both an investor and an Executive Director in the business, bringing his wealth of experience to drive the company\'s success.'
     ],
     specialization: 'Healthcare Innovation & Sustainability',
-    image: '/lovable-uploads/998d6beb-39d2-4395-ae19-69f5258185c3.png',
+    imageName: 'expert-yk-ip',
+    image: getImagePath('expert-yk-ip', 'default-expert') || '',
     category: 'leadership',
     achievements: [
       '20 years of medical practice in Hong Kong',
@@ -168,7 +171,8 @@ export const expertsData: Expert[] = [
       'Daniel\'s commitment to environmental sustainability and his proven track record in the sector make him an ideal Chairman for Infinite Water, where his experience in scaling environmental technology solutions will be instrumental in driving the company\'s growth and impact.'
     ],
     specialization: 'Industrial & Environmental Leadership',
-    image: '/lovable-uploads/18d6054d-681d-414e-a2a3-a5a55388dd3e.png',
+    imageName: 'expert-daniel-jin',
+    image: getImagePath('expert-daniel-jin', 'default-expert') || '',
     category: 'leadership',
     achievements: [
       'Over 25 years in industrial and environmental sectors',
@@ -214,7 +218,8 @@ export const expertsData: Expert[] = [
       'Professor Wong\'s expertise in medical innovation and his commitment to advancing healthcare technologies align perfectly with Infinite Water\'s mission to develop cutting-edge solutions for global challenges. His academic rigor and research methodologies bring valuable perspective to the company\'s technological development efforts.'
     ],
     specialization: 'Academic Excellence & Research',
-    image: '/lovable-uploads/65197fb1-b394-43c0-85fc-3db5c54da40c.png',
+    imageName: 'expert-felix-wong',
+    image: getImagePath('expert-felix-wong', 'default-expert') || '',
     category: 'leadership',
     achievements: [
       'Adjunct Professor at Western Sydney University',

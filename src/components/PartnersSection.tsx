@@ -1,6 +1,7 @@
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
 import { useRef } from 'react';
+import { getImagePath } from '@/data/images';
 
 const PartnersSection = () => {
   const plugin = useRef(
@@ -11,82 +12,82 @@ const PartnersSection = () => {
     {
       name: 'University of Queensland',
       category: 'Research Institution',
-      logo: '/lovable-uploads/477e690f-5885-48a2-b986-85362f3f6caa.png'
+      imageName: 'partner-university-queensland'
     },
     {
       name: 'UNSW Sydney',
       category: 'Research Institution',
-      logo: '/lovable-uploads/8bcf1e74-d850-4bde-93d8-690e34e6ba25.png'
+      imageName: 'partner-unsw-sydney'
     },
     {
       name: 'UTS Sydney',
       category: 'Research Institution',
-      logo: '/lovable-uploads/832973b9-ee0e-40f4-ad25-e34dfd42f701.png'
+      imageName: 'partner-uts-sydney'
     },
     {
       name: 'Water Corporation',
       category: 'Utility Company',
-      logo: '/lovable-uploads/64d79107-03a1-4078-8268-06d438d4e73f.png'
+      imageName: 'partner-water-corporation'
     },
     {
       name: 'Westland Milk Products',
       category: 'Industrial Partner',
-      logo: '/lovable-uploads/783d540b-a9cf-4309-ada6-9657d99bd8f9.png'
+      imageName: 'partner-westland-milk'
     },
     {
       name: 'Xstrata',
       category: 'Industrial Partner',
-      logo: '/lovable-uploads/feb54366-a8ca-4d04-ba53-76edb8289ece.png'
+      imageName: 'partner-xstrata'
     },
     {
       name: 'Alano',
       category: 'Industrial Partner',
-      logo: '/lovable-uploads/e43bf717-791c-448d-bc4c-cbcb1918d37c.png'
+      imageName: 'partner-alano'
     },
     {
       name: 'Australian Aid',
       category: 'Government',
-      logo: '/lovable-uploads/b02c1a37-3c68-4fcc-b5c4-b630929a9a0c.png'
+      imageName: 'partner-australian-aid'
     },
     {
       name: 'Freedom Lifestyle Villages',
       category: 'Industrial Partner',
-      logo: '/lovable-uploads/849bf037-c412-438e-95a1-27eaca8cfe5a.png'
+      imageName: 'partner-freedom-lifestyle'
     },
     {
       name: 'Fonterra',
       category: 'Industrial Partner',
-      logo: '/lovable-uploads/451f66e4-4bd0-4272-911a-f76f62a0be5d.png'
+      imageName: 'partner-fonterra'
     },
     {
       name: 'Multiplex',
       category: 'Construction',
-      logo: '/lovable-uploads/5d9a39f1-cfce-46c3-b940-8a9de2c8e4b8.png'
+      imageName: 'partner-multiplex'
     },
     {
       name: 'Narromine Shire Council',
       category: 'Government',
-      logo: '/lovable-uploads/65f160dc-4c3c-494d-9e80-541bdc3a2a70.png'
+      imageName: 'partner-narromine-shire'
     },
     {
       name: 'OJI',
       category: 'Industrial Partner',
-      logo: '/lovable-uploads/8be17a64-f64a-40a5-9531-12daa932cd23.png'
+      imageName: 'partner-oji'
     },
     {
       name: 'Schutz',
       category: 'Industrial Partner',
-      logo: '/lovable-uploads/82b47e25-afe6-415a-9d49-1a0528920cad.png'
+      imageName: 'partner-schutz'
     },
     {
       name: 'Sealed Air',
       category: 'Industrial Partner',
-      logo: '/lovable-uploads/ed1767dd-3b17-4219-abac-5ad286652fa4.png'
+      imageName: 'partner-sealed-air'
     },
     {
       name: 'Sydney Water',
       category: 'Utility Company',
-      logo: '/lovable-uploads/8d653f41-3935-45c7-a898-8d75231a5350.png'
+      imageName: 'partner-sydney-water'
     }
   ];
 
@@ -118,7 +119,7 @@ const PartnersSection = () => {
                 <div className="group bg-card rounded-lg p-6 hover:shadow-lg transition-all duration-300 text-center h-full flex flex-col items-center justify-center">
                   <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center group-hover:scale-105 transition-transform">
                     <img 
-                      src={partner.logo} 
+                      src={getImagePath(partner.imageName, 'default-partner') || ''} 
                       alt={partner.name}
                       className="max-w-full max-h-full object-contain"
                     />

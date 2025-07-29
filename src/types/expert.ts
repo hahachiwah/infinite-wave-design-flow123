@@ -5,7 +5,8 @@ export interface Expert {
   bio: string;
   fullBio?: string[];
   specialization: string;
-  image: string;
+  imageName?: string;  // Friendly name for non-technical users
+  image: string;       // UUID for backward compatibility
   category: 'preeminent-experts' | 'leadership';
   achievements?: string[];
   expertise?: ExpertiseArea[];
