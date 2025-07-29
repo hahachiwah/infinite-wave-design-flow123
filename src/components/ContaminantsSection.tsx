@@ -1,52 +1,9 @@
-import { Droplets, Shield, AlertTriangle, Zap } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
+import { getContaminantsOverview } from '@/data/contaminants';
 
 const ContaminantsSection = () => {
-  const contaminants = [
-    {
-      icon: Droplets,
-      title: 'Natural Organic Matter (NOM)',
-      description: 'Effective removal of dissolved organic compounds that cause color, taste, and odor issues in water treatment.',
-      technology: 'Hydroxon™',
-      technologyLink: '/contaminants/natural-organic-matter'
-    },
-    {
-      icon: Shield,
-      title: 'Heavy Metals',
-      description: 'Complete removal of toxic heavy metals including lead, copper, iron, manganese, molybdenum, nickel, zinc, and aluminum.',
-      technology: 'Advanced Catalytic Oxidation',
-      technologyLink: '/contaminants/heavy-metals'
-    },
-    {
-      icon: AlertTriangle,
-      title: 'PFAS (Per- and Polyfluoroalkyl Substances)',
-      description: 'Breaking down forever chemicals that persist in the environment and bioaccumulate in living organisms.',
-      technology: 'Advanced Oxidation Processes (AOP)',
-      technologyLink: '/contaminants/pfas'
-    },
-    {
-      icon: Zap,
-      title: 'Pesticides & Herbicides',
-      description: 'Removal of agricultural chemicals including glyphosate and other hydrocarbon-based pesticides.',
-      technology: 'Hydroxon™',
-      technologyLink: '/contaminants/pesticides-herbicides'
-    },
-    {
-      icon: Droplets,
-      title: 'Pathogens & Microorganisms',
-      description: 'Validated disinfection performance against bacteria, viruses, and other harmful microorganisms.',
-      technology: 'Advanced Oxidation Processes (AOP)',
-      technologyLink: '/contaminants/pathogens-microorganisms'
-    },
-    {
-      icon: Shield,
-      title: 'Total Phosphorus',
-      description: 'Effective removal of phosphorus compounds that contribute to eutrophication in water bodies.',
-      technology: 'Hydroxon™',
-      technologyLink: '/contaminants/total-phosphorus'
-    }
-  ];
+  const contaminants = getContaminantsOverview();
 
   return (
     <section id="contaminants" className="py-24 gradient-subtle">
