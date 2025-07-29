@@ -155,13 +155,13 @@ const Footer = () => {
               © 2024 Infinite Water. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-background/80 hover:text-background transition-colors">
+              <a href="/privacy-policy" className="text-background/80 hover:text-background transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="text-background/80 hover:text-background transition-colors">
+              <a href="/terms-of-service" className="text-background/80 hover:text-background transition-colors">
                 Terms of Service
               </a>
-              <a href="#" className="text-background/80 hover:text-background transition-colors">
+              <a href="/cookie-policy" className="text-background/80 hover:text-background transition-colors">
                 Cookie Policy
               </a>
             </div>
