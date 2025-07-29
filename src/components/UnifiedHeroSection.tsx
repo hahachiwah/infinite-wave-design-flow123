@@ -103,19 +103,22 @@ const UnifiedHeroSection = ({
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in delay-1000">
+        <div className="max-w-4xl mx-auto delay-1000">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in">
             {title}
           </h1>
           {subtitle && (
+        <div className=" delay-5000">
             <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed animate-fade-in delay-5000">
               {subtitle}
-            </p>
+            </p></div>
           )}
           {description && (
+      <div className=" delay-10000">
             <p className="text-lg md:text-xl text-white/80 mb-12 max-w-3xl mx-auto animate-fade-in delay-100000">
               {description}
-            </p>
+            </p></div>
+          )}
           )}
           
           {(primaryButtonText || secondaryButtonText) && (
