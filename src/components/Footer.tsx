@@ -21,7 +21,7 @@ const Footer = () => {
             <div>
               <div className="flex items-center space-x-2 mb-6">
                 <img 
-                  src={getImagePath('infinite-water-logo') || ''} 
+                  src={getImagePath('infinite-water-logo-footer') || ''} 
                   alt="Infinite Water" 
                   className="h-8 w-auto"
                 />

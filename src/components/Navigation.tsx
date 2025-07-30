@@ -24,7 +24,7 @@ const Navigation = () => {
           <div className="flex-shrink-0 ml-2">
             <Link to="/" className="flex items-center">
               <img 
-                src={getImagePath('infinite-water-logo') || ''} 
+                src={getImagePath('infinite-water-logo-header') || ''} 
                 alt="Infinite Water" 
                 className="h-12 w-auto" 
               />
