@@ -3,48 +3,7 @@ import { Button } from '@/components/ui/button';
 import { getImagePath } from '@/data/images';
 
 const Footer = () => {
-  const footerSections = [
-    {
-      title: 'Solutions',
-      links: [
-        'Water Treatment',
-        'Wastewater Management',
-        'Industrial Solutions',
-        'Municipal Systems',
-        'Custom Engineering'
-      ]
-    },
-    {
-      title: 'Industries',
-      links: [
-        'Municipal',
-        'Mining',
-        'Food & Beverage',
-        'Manufacturing',
-        'Agriculture'
-      ]
-    },
-    {
-      title: 'Resources',
-      links: [
-        'Case Studies',
-        'Technical Papers',
-        'Documentation',
-        'Support',
-        'Training'
-      ]
-    },
-    {
-      title: 'Company',
-      links: [
-        'About Us',
-        'Careers',
-        'News',
-        'Partners',
-        'Contact'
-      ]
-    }
-  ];
+  const footerSections = [];
 
   const socialLinks = [
     { icon: Linkedin, href: '#', label: 'LinkedIn' },
@@ -57,9 +16,9 @@ const Footer = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
         <div className="py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Company Info */}
-            <div className="lg:col-span-2">
+            <div>
               <div className="flex items-center space-x-2 mb-6">
                 <img 
                   src={getImagePath('infinite-water-logo') || ''} 
@@ -105,45 +64,22 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Footer Links */}
-            {footerSections.map((section, index) => (
-              <div key={index}>
-                <h3 className="font-semibold text-background mb-4">{section.title}</h3>
-                <ul className="space-y-3">
-                  {section.links.map((link, linkIndex) => (
-                    <li key={linkIndex}>
-                      <a
-                        href="#"
-                        className="text-background/80 hover:text-background transition-colors text-sm"
-                      >
-                        {link}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Newsletter Section */}
-        <div className="border-t border-background/20 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            {/* Newsletter Section */}
             <div>
-              <h3 className="text-xl font-semibold text-background mb-2">Stay Updated</h3>
-              <p className="text-background/80">
+              <h3 className="text-xl font-semibold text-background mb-4">Stay Updated</h3>
+              <p className="text-background/80 mb-6">
                 Get the latest insights on water treatment technology and industry trends.
               </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-2 rounded-lg bg-background/10 border border-background/20 text-background placeholder:text-background/60 focus:outline-none focus:ring-2 focus:ring-primary"
-              />
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-6">
-                Subscribe
-              </Button>
+              <div className="flex flex-col gap-3">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="px-4 py-2 rounded-lg bg-background/10 border border-background/20 text-background placeholder:text-background/60 focus:outline-none focus:ring-2 focus:ring-primary"
+                />
+                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                  Subscribe
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -155,13 +91,13 @@ const Footer = () => {
               © 2024 Infinite Water. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-background/80 hover:text-background transition-colors">
+              <a href="/privacy-policy" className="text-background/80 hover:text-background transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="text-background/80 hover:text-background transition-colors">
+              <a href="/terms-of-service" className="text-background/80 hover:text-background transition-colors">
                 Terms of Service
               </a>
-              <a href="#" className="text-background/80 hover:text-background transition-colors">
+              <a href="/cookie-policy" className="text-background/80 hover:text-background transition-colors">
                 Cookie Policy
               </a>
             </div>

@@ -14,7 +14,7 @@ const TechnologySection = () => {
       icon: FlaskConical,
       overview: "CAT employs a multi-metal oxide granular catalyst in a simple reactor setup (similar to a mixed media filter). Charged sites on the catalyst split water molecules (H₂O → H⁺ + OH⁻) and decompose low-cost oxygen donors (e.g., NaOCl, permanganate, or H₂O₂) to release atomic oxygen and generate highly reactive hydroxyl radicals (•OH, redox potential 2.8V), enabling rapid oxidation of organics into CO₂, water, and salts, while also oxidizing inorganics and disinfecting pathogens.",
       unique: "Unlike homogeneous AOPs (e.g., Fenton or UV/H₂O₂) that rely on bulk chemical mixing or energy-intensive UV lamps, CAT is heterogeneous and catalyst-driven, offering reusability and efficiency without external energy sources like electricity for ozone generation or UV, avoiding issues like short oxidant half-life or pH sensitivity.",
-      comparison: "Traditional AOPs like photocatalysis (TiO₂/UV) or electrochemical AOPs demand high energy for UV or electrodes, while biological treatments are ineffective against recalcitrant pollutants.",
+      comparison: "CAT is hundred times more powerful and energy efficient in terms of oxidating contaminants without drawbacks in traditional AOPs like photocatalysis (TiO₂/UV) or electrochemical AOPs, while biological treatments are ineffective against recalcitrant pollutants.",
       advantage: "Achieves complete mineralization of pollutants faster than conventional oxidants (e.g., chlorine at 1.36V or NaOCl at 0.95V), with reaction rates 10^8–10^10 M⁻¹s⁻¹ for •OH."
     },
     {

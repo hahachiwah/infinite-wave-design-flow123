@@ -10,7 +10,7 @@ const Technology = () => {
       <main>
         <UnifiedHeroSection 
           title="Our Technology"
-          subtitle="Advanced oxidation solutions"
+          subtitle="Catalytic Advanced Treatment"
           description="Revolutionary water treatment technologies that deliver superior performance, efficiency, and environmental sustainability across all applications."
           videoSrc="/lovable-uploads/infinite-water_header.mp4"
         />

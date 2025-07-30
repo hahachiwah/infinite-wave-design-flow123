@@ -15,6 +15,9 @@ import Leadership from "./pages/Leadership";
 import Contact from "./pages/Contact";
 import Municipal from "./pages/Municipal";
 import NotFound from "./pages/NotFound";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
+import CookiePolicy from "./pages/CookiePolicy";
 
 // Contaminant detail pages
 import NaturalOrganicMatter from "./pages/contaminants/NaturalOrganicMatter";
@@ -48,6 +51,9 @@ const routeConfig = [
   },
   { path: '/municipal', element: <Municipal /> },
   { path: '/contact', element: <Contact /> },
+  { path: '/privacy-policy', element: <PrivacyPolicy /> },
+  { path: '/terms-of-service', element: <TermsOfService /> },
+  { path: '/cookie-policy', element: <CookiePolicy /> },
   { path: '*', element: <NotFound /> }
 ];
 
