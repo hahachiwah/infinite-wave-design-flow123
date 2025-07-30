@@ -31,7 +31,6 @@ export const imageMap: Record<string, string> = {
   'case-study-copper-mine': '82b47e25-afe6-415a-9d49-1a0528920cad.png',
   'copper-mine-townsville': '82b47e25-afe6-415a-9d49-1a0528920cad.png',
   'case-study-packaging-manufacturer': '849bf037-c412-438e-95a1-27eaca8cfe5a.png',
-  'reusable-packaging-manufacturer': '849bf037-c412-438e-95a1-27eaca8cfe5a.png',
   'case-study-dairy-recycling': '8d653f41-3935-45c7-a898-8d75231a5350.png',
   'dairy-industry-recycling': '8d653f41-3935-45c7-a898-8d75231a5350.png',
   'case-study-bangladesh-water': '65f160dc-4c3c-494d-9e80-541bdc3a2a70.png',
@@ -50,6 +49,19 @@ export const imageMap: Record<string, string> = {
   'additional-4': 'e55dfd43-2575-4059-a623-e805c11c1a38.png',
   // APpplications
   'portable-water':"portableWater.jpg",
+  // Applications-portable-water
+  "disinfection-Of-municipal-piped-water":"DisinfectionOfMunicipalPipedWater.png",
+  "drinking-water-at-meherpur-district":"DrinkingWaterAtMeherpurDistrict.png",
+  "reusable-packaging-manufacturer":"ReusablePackagingManufacturer.png",
+ "packaged-desalination-plants": "packagedDesalinationPlants.png",
+  // Applications-wate-water
+  'waste-water':"oilyWater-scaled.jpg",
+  'industrial-parks-&-landfill-leachate':'landFill.jpg',
+  "recycle-water-for-the-diary-industry":"RecycleWaterForTheDiaryIndustry.png",
+  "metal-plating-wastewater":"Manufacturing_resized.jpg",
+  "microelectronics-&-semiconductor":"micro-processor.jpg",
+  "municipal-secondary-effluent":"municipalSecondaryEffluent.jpg",
+  "Irrigation-Water-Treatment":"irrigationWaterTreatment.jpg",
   // Default/Fallback Images
   'default-case-study': '65197fb1-b394-43c0-85fc-3db5c54da40c.png',
   'default-expert': '783d540b-a9cf-4309-ada6-9657d99bd8f9.png',

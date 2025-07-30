@@ -16,7 +16,7 @@ const ServicesSection = () => {
       title: 'Municipal',
       description: 'Comprehensive water treatment solutions for municipal applications across remote communities, regional councils, and urban utilities.',
       features: ['Remote Communities', 'Regional Councils', 'Urban Utilities'],
-      image: 'https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?w=600&h=400&fit=crop',
+      image: getImagePath("disinfection-Of-municipal-piped-water"),
       redirectTo: '/municipal'
     },
     {
@@ -24,7 +24,8 @@ const ServicesSection = () => {
       title: 'Disaster Relief Water Treatment',
       description: 'Rapid deployment water treatment systems for emergency and disaster relief situations.',
       features: ['Portable Systems', 'Emergency Response', 'Rapid Deployment'],
-      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop'
+      image: getImagePath("drinking-water-at-meherpur-district") 
+      // DrinkingWaterAtMeherpurDistrict
     },
     {
       icon: Zap,
@@ -38,14 +39,14 @@ const ServicesSection = () => {
       title: 'Glyphosate Degradation',
       description: 'Specialized treatment for glyphosate degradation in drinking water sources.',
       features: ['Pesticide Removal', 'CAT Technology', 'Water Purification'],
-      image: 'https://images.unsplash.com/photo-1574263867128-ed92a33e7da7?w=600&h=400&fit=crop'
+      image: getImagePath("reusable-packaging-manufacturer") 
     },
     {
       icon: Settings,
       title: 'Packaged Desalination Plants',
       description: 'Medium size desalinating plants for inhabited islands and coastal areas.',
       features: ['Coastal Solutions', 'Island Communities', 'Modular Design'],
-      image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=400&fit=crop'
+      image: getImagePath("packaged-desalination-plants") 
     }
   ];
 
@@ -55,21 +56,21 @@ const ServicesSection = () => {
       title: 'Cow Water',
       description: 'Specialized treatment systems for agricultural and dairy wastewater management.',
       features: ['Organic Matter Removal', 'Nutrient Recovery', 'Effluent Reuse'],
-      image: 'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=600&h=400&fit=crop'
+      image: getImagePath("recycle-water-for-the-diary-industry")
     },
     {
       icon: HardHat,
       title: 'Industrial Parks & Landfill Leachate',
       description: 'Treatment of wastewater from industrial parks and landfill leachate.',
       features: ['Industrial Wastewater', 'Leachate Treatment', 'Heavy Metal Removal'],
-      image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=400&fit=crop'
+      image: getImagePath("industrial-parks-&-landfill-leachate")
     },
     {
       icon: Shield,
       title: 'Metal Plating Wastewater',
       description: 'Treatment of wastewater from metal plating operations.',
       features: ['Heavy Metal Removal', 'Electroplating Waste', 'Surface Treatment'],
-      image: 'https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=600&h=400&fit=crop'
+      image: getImagePath("metal-plating-wastewater")
     },
     {
       icon: Palette,
@@ -78,26 +79,26 @@ const ServicesSection = () => {
       features: ['Dye Removal', 'Color Treatment', 'Fiber Processing'],
       image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&h=400&fit=crop'
     },
-    {
-      icon: FileText,
-      title: 'Pulp & Paper Industry',
-      description: 'Treatment of wastewater from pulp and paper industry processes.',
-      features: ['Lignin Removal', 'Bleaching Chemicals', 'Fiber Recovery'],
-      image: 'https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=600&h=400&fit=crop'
-    },
+    // {
+    //   icon: FileText,
+    //   title: 'Pulp & Paper Industry',
+    //   description: 'Treatment of wastewater from pulp and paper industry processes.',
+    //   features: ['Lignin Removal', 'Bleaching Chemicals', 'Fiber Recovery'],
+    //   image: 'https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=600&h=400&fit=crop'
+    // },
     {
       icon: Cpu,
       title: 'Microelectronics & Semiconductor',
       description: 'Treatment of wastewater from microelectronics and semiconductor industry.',
       features: ['Chemical Cleaning', 'Ultra-pure Requirements', 'Process Water'],
-      image: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=600&h=400&fit=crop'
+      image: getImagePath("microelectronics-&-semiconductor")
     },
     {
       icon: Recycle,
       title: 'Municipal Secondary Effluent',
       description: 'Treatment of utility municipal wastewater, secondary effluent for reuse.',
       features: ['Effluent Polishing', 'Water Reuse', 'Municipal Treatment'],
-      image: 'https://images.unsplash.com/photo-1572254465217-6758a7f8b0e4?w=600&h=400&fit=crop'
+      image: getImagePath("municipal-secondary-effluent")
     },
     {
       icon: Beaker,
@@ -118,7 +119,7 @@ const ServicesSection = () => {
       title: 'Irrigation Water Treatment',
       description: 'Treatment of water for irrigation and agricultural applications.',
       features: ['Agricultural Water', 'Crop Irrigation', 'Soil Health'],
-      image: 'https://images.unsplash.com/photo-1574263867128-ed92a33e7da7?w=600&h=400&fit=crop'
+      image: getImagePath("Irrigation-Water-Treatment")
     },
     {
       icon: Waves,
@@ -151,7 +152,7 @@ const ServicesSection = () => {
       description: 'Advanced wastewater processing and recovery',
       icon: Factory,
       services: wastewaterServices,
-      image: 'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=600&h=400&fit=crop'
+      image: getImagePath('waste-water')
     }
   ];
 

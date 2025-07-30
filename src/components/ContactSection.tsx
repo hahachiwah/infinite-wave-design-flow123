@@ -10,19 +10,19 @@ const ContactSection = () => {
       icon: Mail,
       title: 'Email Us',
       content: 'info@infinitewater.com',
-      description: 'Send us an email and we\'ll respond within 24 hours'
+      description: ''
     },
     {
       icon: Phone,
       title: 'Call Us',
-      content: '+61 3 9999 0000',
-      description: 'Mon-Fri from 8am to 6pm AEST'
+      content: '+61 450 984 519',
+      description: 'Mon-Fri from 9am to 6pm AEST'
     },
     {
       icon: MapPin,
       title: 'Visit Us',
-      content: 'Melbourne, Australia',
-      description: 'Come say hello at our office headquarters'
+      content: 'Building G 22 Powers Road, SEVEN HILLS New South Wales 2147, Australia',
+      description: ' '
     }
   ];
 
@@ -67,7 +67,7 @@ const ContactSection = () => {
               ))}
             </div>
 
-            <div className="bg-primary/5 rounded-lg p-6 border border-primary/20">
+            {/* <div className="bg-primary/5 rounded-lg p-6 border border-primary/20">
               <h4 className="font-semibold text-foreground mb-2">Emergency Support</h4>
               <p className="text-sm text-muted-foreground mb-3">
                 For urgent technical support and emergency situations, our 24/7 response team is available.
@@ -75,11 +75,11 @@ const ContactSection = () => {
               <Button variant="outline" size="sm">
                 Emergency Contact
               </Button>
-            </div>
+            </div> */}
           </div>
 
           {/* Contact Form */}
-          <Card className="shadow-large">
+          {/* <Card className="shadow-large">
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold text-foreground mb-6">Send Us a Message</h3>
               
@@ -137,7 +137,7 @@ const ContactSection = () => {
                 </Button>
               </form>
             </CardContent>
-          </Card>
+          </Card> */}
         </div>
       </div>
     </section>
