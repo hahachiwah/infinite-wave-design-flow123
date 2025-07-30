@@ -18,7 +18,7 @@ const ContactSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div className="space-y-8">
-            <div className="text-center">
+            <div className="text-center max-w-2xl mx-auto">
               <h3 className="text-2xl font-bold text-foreground mb-6">Let's Start a Conversation</h3>
               <p className="text-muted-foreground mb-8">
                 Whether you're looking to upgrade existing systems or implement new water treatment solutions, our team of experts is here to help. We provide comprehensive consultation and custom engineering services.
