@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { getImagePath } from '@/data/images';
 
 const ServicesSection = () => {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ const ServicesSection = () => {
       title: 'Municipal',
       description: 'Comprehensive water treatment solutions for municipal applications across remote communities, regional councils, and urban utilities.',
       features: ['Remote Communities', 'Regional Councils', 'Urban Utilities'],
-      image: 'https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?w=600&h=400&fit=crop',
+      image: getImagePath('portable-water'),
       redirectTo: '/municipal'
     },
     {

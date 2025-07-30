@@ -48,7 +48,8 @@ export const imageMap: Record<string, string> = {
   'additional-2': '5c360a7b-0769-46b4-a4cc-0eba0ec52e9a.png',
   'additional-3': 'e4fa0a4f-d2f1-473e-b60a-659b475b7202.png',
   'additional-4': 'e55dfd43-2575-4059-a623-e805c11c1a38.png',
-  
+  // APpplications
+  'portable-water':"portableWater.jpg",
   // Default/Fallback Images
   'default-case-study': '65197fb1-b394-43c0-85fc-3db5c54da40c.png',
   'default-expert': '783d540b-a9cf-4309-ada6-9657d99bd8f9.png',
