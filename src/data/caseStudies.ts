@@ -6,13 +6,13 @@ export interface CaseStudy {
   solution: string;
   results: {
     capacity: string;
-    efficiency: string;
-    savings: string;
+    efficiency?: string;
+    savings?: string;
   };
-  technology: string;
-  technologyLink: string;
+  technology?: string;
+  technologyLink?: string;
   imageName: string;  // Friendly name for non-technical users
-  image: string;      // UUID for backward compatibility
+  image?: string;      // UUID for backward compatibility
 }
 
 export const caseStudiesData: CaseStudy[] = [
@@ -30,7 +30,7 @@ export const caseStudiesData: CaseStudy[] = [
     technology: 'Advanced Catalytic Oxidation',
     technologyLink: '/technology',
     imageName: 'case-study-copper-mine',
-    image: 'photo-1581092795360-fd1ca04f0952'
+    image: 'CopperMineTownsville-e1741753465826.png'
   },
   {
     title: 'Reusable Packaging Manufacturer, Australia',
@@ -73,11 +73,27 @@ export const caseStudiesData: CaseStudy[] = [
     results: {
       capacity: '10,000 L/day',
       efficiency: 'Arsenic: 0.178 → 0.003 mg/L',
-      savings: 'Meets WHO standards'
+      // savings: 'Meets WHO standards'
     },
     technology: 'Advanced Catalytic Oxidation',
     technologyLink: '/technology',
     imageName: 'case-study-bangladesh-water',
+    image: 'photo-1519389950473-47ba0277781c'
+  },
+  {
+    title: 'Drinking Water supply to Beijing Daxing International Airport (China)',
+    location: 'Beijing China',
+    category: 'Municipal',
+    challenge: 'The building requires to treat existing municipal water to meet drinking water standard for clean / safe water provision',
+    solution: 'With the deployment of SHE CAT water treatment system, the municipal water is treated to meet WHO drinking water standard',
+    results: {
+      capacity: '30,000 L/day',
+      // efficiency: 'Arsenic: 0.178 → 0.003 mg/L',
+      // savings: 'Meets WHO standards'
+    },
+    // technology: 'Advanced Catalytic Oxidation',
+    // technologyLink: '/technology',
+    imageName: 'case-study-beijing-daxing-airport-water',
     image: 'photo-1519389950473-47ba0277781c'
   }
 ];

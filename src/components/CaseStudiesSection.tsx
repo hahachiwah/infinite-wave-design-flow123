@@ -40,12 +40,12 @@ const CaseStudiesSection = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        {/* <div className="text-center mt-12">
           <Button size="lg" className="shadow-medium">
             View All Case Studies
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
-        </div>
+        </div> */}
         </div>
       </section>
   );
