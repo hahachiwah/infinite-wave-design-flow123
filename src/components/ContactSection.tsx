@@ -1,30 +1,7 @@
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
+import { contactInfo } from '@/data/contactInfo';
 
 const ContactSection = () => {
-  const contactInfo = [
-    {
-      icon: Mail,
-      title: 'Email Us',
-      content: 'info@infinitewater.com',
-      description: ''
-    },
-    {
-      icon: Phone,
-      title: 'Call Us',
-      content: '+61 450 984 519',
-      description: 'Mon-Fri from 9am to 6pm AEST'
-    },
-    {
-      icon: MapPin,
-      title: 'Visit Us',
-      content: 'Building G 22 Powers Road, SEVEN HILLS New South Wales 2147, Australia',
-      description: ' '
-    }
-  ];
 
   return (
     <section id="contact" className="py-24 gradient-subtle">
@@ -41,7 +18,7 @@ const ContactSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div className="space-y-8">
-            <div>
+            <div className="text-center">
               <h3 className="text-2xl font-bold text-foreground mb-6">Let's Start a Conversation</h3>
               <p className="text-muted-foreground mb-8">
                 Whether you're looking to upgrade existing systems or implement new water treatment solutions, our team of experts is here to help. We provide comprehensive consultation and custom engineering services.
@@ -49,7 +26,7 @@ const ContactSection = () => {
             </div>
 
             <div className="space-y-6">
-              {contactInfo.map((info, index) => (
+              {contactInfo.contactDetails.map((info, index) => (
                 <Card key={index} className="shadow-soft hover:shadow-medium transition-smooth">
                   <CardContent className="p-6">
                     <div className="flex items-start space-x-4">

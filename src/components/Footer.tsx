@@ -1,15 +1,8 @@
-import { Droplets, Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { getImagePath } from '@/data/images';
+import { contactInfo } from '@/data/contactInfo';
 
 const Footer = () => {
-  const footerSections = [];
-
-  const socialLinks = [
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Facebook, href: '#', label: 'Facebook' }
-  ];
 
   return (
     <footer className="bg-foreground text-background">
@@ -28,27 +21,30 @@ const Footer = () => {
               </div>
               
               <p className="text-background/80 mb-6 leading-relaxed">
-                Leading the future of water treatment technology through sustainable innovation and engineering excellence. 
-                We develop solutions that protect our most precious resource while driving operational efficiency.
+                {contactInfo.companyDescription}
               </p>
 
               <div className="space-y-3">
-                <div className="flex items-center space-x-3">
-                  <Mail className="h-5 w-5 text-primary" />
-                  <span className="text-background/90">info@infinitewater.com</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Phone className="h-5 w-5 text-primary" />
-                  <span className="text-background/90">+61 3 9999 0000</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <MapPin className="h-5 w-5 text-primary" />
-                  <span className="text-background/90">Melbourne, Australia</span>
-                </div>
+                {contactInfo.contactDetails.map((detail, index) => {
+                  const IconComponent = detail.icon;
+                  let content = detail.content;
+                  
+                  // Use specific contact info values for consistency
+                  if (index === 0) content = contactInfo.email;
+                  if (index === 1) content = contactInfo.phone;
+                  if (index === 2) content = contactInfo.address;
+                  
+                  return (
+                    <div key={index} className="flex items-center space-x-3">
+                      <IconComponent className="h-5 w-5 text-primary" />
+                      <span className="text-background/90">{content}</span>
+                    </div>
+                  );
+                })}
               </div>
 
               <div className="flex space-x-4 mt-6">
-                {socialLinks.map((social, index) => (
+                {contactInfo.socialLinks.map((social, index) => (
                   <Button
                     key={index}
                     variant="ghost"
