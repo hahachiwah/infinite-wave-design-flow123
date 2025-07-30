@@ -1,8 +1,8 @@
 // Image mapping from friendly names to UUID filenames
 export const imageMap: Record<string, string> = {
   // Company Logo
-  'infinite-water-logo': '18223f46-e114-4f16-8a48-67997d32111a.png',
-  
+  'infinite-water-logo': 'Infinite_Water_Logo_Black.png',
+  // '18223f46-e114-4f16-8a48-67997d32111a.png'
   // Expert Images
   'expert-gheorghe': '927cd115-1865-4db6-8aca-0fe09ab31ec3.png',
   'expert-yk-ip': '998d6beb-39d2-4395-ae19-69f5258185c3.png',
