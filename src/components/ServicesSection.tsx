@@ -16,7 +16,7 @@ const ServicesSection = () => {
       title: 'Municipal',
       description: 'Comprehensive water treatment solutions for municipal applications across remote communities, regional councils, and urban utilities.',
       features: ['Remote Communities', 'Regional Councils', 'Urban Utilities'],
-      image: getImagePath('portable-water'),
+      image: 'https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?w=600&h=400&fit=crop',
       redirectTo: '/municipal'
     },
     {
@@ -143,7 +143,7 @@ const ServicesSection = () => {
       description: 'Clean, safe drinking water solutions',
       icon: Droplets,
       services: portableWaterServices,
-      image: 'https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?w=600&h=400&fit=crop'
+      image: getImagePath('portable-water')
     },
     {
       id: 'wastewater',
