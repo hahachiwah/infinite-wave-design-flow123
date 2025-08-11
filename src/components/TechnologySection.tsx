@@ -199,8 +199,10 @@ const TechnologySection = () => {
                         <button
                           key={index}
                           onClick={() => setCurrentSlide(index)}
-                          className={`w-2 h-2 rounded-full transition-colors ${
-                            index === currentSlide ? 'bg-primary' : 'bg-muted'
+                          className={`w-2 h-2 rounded-full transition-colors border ${
+                            index === currentSlide 
+                              ? 'bg-primary border-primary' 
+                              : 'bg-primary/40 border-primary/60 hover:bg-primary/60'
                           }`}
                         />
                       ))}
@@ -294,8 +296,10 @@ const TechnologySection = () => {
                 {catFeatures.map((_, index) => (
                   <button
                     key={index}
-                    className={`w-3 h-3 rounded-full transition-colors ${
-                      index === currentFeature ? 'bg-primary' : 'bg-muted'
+                    className={`w-3 h-3 rounded-full transition-colors border ${
+                      index === currentFeature 
+                        ? 'bg-primary border-primary' 
+                        : 'bg-primary/40 border-primary/60 hover:bg-primary/60'
                     }`}
                     onClick={() => setCurrentFeature(index)}
                   />
