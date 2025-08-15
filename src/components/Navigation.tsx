@@ -3,9 +3,20 @@ import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { getImagePath } from '@/data/images';
+import SafeImage from '@/components/SafeImage';
+import ErrorBoundary from '@/components/ErrorBoundary';
+
+// Navigation constants - Uncle Bob: No Magic Numbers
+const NAVIGATION_CONFIG = {
+  LOGO_HEIGHT_CLASS: 'h-12',
+  MOBILE_BREAKPOINT: 'md',
+  CONSOLE_LOG_PREFIX: '🧭 [Navigation]',
+} as const;
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
+  console.log(`${NAVIGATION_CONFIG.CONSOLE_LOG_PREFIX} 🎯 Rendering navigation component`);
 
   const menuItems = [
     { name: 'Case Studies', href: '/case-studies' },
@@ -16,17 +27,27 @@ const Navigation = () => {
     { name: 'Contact', href: '/contact' },
   ];
 
+  const logoPath = getImagePath('infinite-water-logo-header');
+  console.log(`${NAVIGATION_CONFIG.CONSOLE_LOG_PREFIX} 🖼️ Logo path resolved:`, logoPath);
+
   return (
-    <nav className="fixed  top-0 left-0 right-0 z-50 glass-effect border-b border-border/20">
-      {/* <div className="container mx-auto px-2 sm:px-4 lg:px-6"> */}
+    <ErrorBoundary fallback={<div className="fixed top-0 left-0 right-0 z-50 h-16 bg-background border-b">
+      <div className="flex items-center h-full px-4">
+        <span className="font-bold text-primary">🌊 Infinite Water</span>
+      </div>
+    </div>}>
+      <nav className="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-border/20">
         <div className="flex w-full items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0 ml-2">
             <Link to="/" className="flex items-center">
-              <img 
-                src={getImagePath('infinite-water-logo-header') || ''} 
-                alt="Infinite Water" 
-                className="h-12 w-auto" 
+              <SafeImage
+                src={logoPath}
+                alt="Infinite Water"
+                className={`${NAVIGATION_CONFIG.LOGO_HEIGHT_CLASS} w-auto`}
+                onError={(error) => {
+                  console.error(`${NAVIGATION_CONFIG.CONSOLE_LOG_PREFIX} ❌ Logo failed to load:`, error);
+                }}
               />
             </Link>
           </div>
@@ -75,8 +96,8 @@ const Navigation = () => {
             </div>
           </div>
         )}
-      {/* </div> */}
-    </nav>
+      </nav>
+    </ErrorBoundary>
   );
 };
 

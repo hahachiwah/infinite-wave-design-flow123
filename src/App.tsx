@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
+import ErrorBoundary from "./components/ErrorBoundary";
 import Index from "./pages/Index";
 import CaseStudies from "./pages/CaseStudies";
 import Technology from "./pages/Technology";
@@ -65,19 +66,34 @@ const renderRoutes = (routes: any[]) => {
   ));
 };
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        <Routes>
-          {renderRoutes(routeConfig)}
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  console.log('🚀 [App] Initializing Infinite Water application');
+  
+  return (
+    <ErrorBoundary onError={(error, errorInfo) => {
+      console.error('🚨 [App] Top-level error caught:', { error, errorInfo });
+    }}>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <ScrollToTop />
+            <ErrorBoundary fallback={<div className="min-h-screen flex items-center justify-center">
+              <div className="text-center">
+                <h1 className="text-xl font-semibold mb-2">🌊 Navigation Error</h1>
+                <p className="text-muted-foreground">Please refresh the page</p>
+              </div>
+            </div>}>
+              <Routes>
+                {renderRoutes(routeConfig)}
+              </Routes>
+            </ErrorBoundary>
+          </BrowserRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </ErrorBoundary>
+  );
+};
 
 export default App;
