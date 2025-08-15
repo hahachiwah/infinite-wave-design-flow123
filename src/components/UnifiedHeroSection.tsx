@@ -2,6 +2,8 @@ import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState, useRef, useEffect } from 'react';
 import heroImage from '@/assets/hero-water.jpg';
+import SafeAssetLoader from '@/components/SafeAssetLoader';
+import { isInIframe } from '@/utils/iframeDetection';
 
 interface UnifiedHeroSectionProps {
   title: string;
@@ -33,15 +35,23 @@ const UnifiedHeroSection = ({
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
+    const inIframe = isInIframe();
+    console.log(`🖼️ [UnifiedHeroSection] 🚀 Initializing hero section (iframe: ${inIframe})`);
+    
     const video = videoRef.current;
     if (video && videoSrc) {
+      console.log(`🎥 [UnifiedHeroSection] 📹 Setting up video: ${videoSrc}`);
+      
       const handleLoadedData = () => {
+        console.log('✅ [UnifiedHeroSection] Video loaded successfully');
         setVideoLoaded(true);
       };
-      const handleError = () => {
+      const handleError = (e: Event) => {
+        console.error('❌ [UnifiedHeroSection] Video failed to load:', e);
         setVideoLoaded(false);
       };
       const handleCanPlay = () => {
+        console.log('🎬 [UnifiedHeroSection] Video ready to play');
         setVideoLoaded(true);
       };
 
@@ -50,6 +60,7 @@ const UnifiedHeroSection = ({
       video.addEventListener('error', handleError);
       
       if (video.readyState >= 2) {
+        console.log('⚡ [UnifiedHeroSection] Video already loaded');
         setVideoLoaded(true);
       }
 
@@ -70,32 +81,33 @@ const UnifiedHeroSection = ({
       {/* Background Video/Image with Overlay */}
       <div className="absolute inset-0 z-0">
         {videoSrc ? (
-          <>
-            <video
-              ref={videoRef}
-              autoPlay
-              loop
-              muted={isMuted}
-              playsInline
-              preload="metadata"
-              className="w-full h-full object-cover"
-              style={{ display: videoLoaded ? 'block' : 'none' }}
-            >
-              <source src={videoSrc} type="video/mp4" />
-            </video>
-            {!videoLoaded && (
-              <img 
-                src={heroImage} 
-                alt="Water treatment technology" 
-                className="w-full h-full object-cover"
-              />
-            )}
-          </>
-        ) : (
-          <img 
-            src={heroImage} 
-            alt="Water treatment technology" 
+          <SafeAssetLoader
+            src={videoSrc}
+            type="video"
             className="w-full h-full object-cover"
+            fallbackComponent={
+              <SafeAssetLoader
+                src={heroImage}
+                type="image"
+                alt="Water treatment technology"
+                className="w-full h-full object-cover"
+                fallbackComponent={
+                  <div className="w-full h-full bg-gradient-hero" />
+                }
+              />
+            }
+            onLoadSuccess={() => console.log('🎯 [UnifiedHeroSection] ✅ Video loaded successfully')}
+            onLoadError={(error) => console.error('❌ [UnifiedHeroSection] Video load failed:', error)}
+          />
+        ) : (
+          <SafeAssetLoader
+            src={heroImage}
+            type="image"
+            alt="Water treatment technology"
+            className="w-full h-full object-cover"
+            fallbackComponent={
+              <div className="w-full h-full bg-gradient-hero" />
+            }
           />
         )}
         <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/70 to-primary/50"></div>
