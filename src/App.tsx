@@ -4,7 +4,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
-import ErrorBoundary from "./components/ErrorBoundary";
 import Index from "./pages/Index";
 import CaseStudies from "./pages/CaseStudies";
 import Technology from "./pages/Technology";
@@ -30,69 +29,40 @@ import TotalPhosphorus from "./pages/contaminants/TotalPhosphorus";
 
 const queryClient = new QueryClient();
 
-const routeConfig = [
-  { path: '/', element: <Index /> },
-  { path: '/case-studies', element: <CaseStudies /> },
-  { path: '/technology', element: <Technology /> },
-  { path: '/applications', element: <Applications /> },
-  { path: '/contaminants', element: <Contaminants /> },
-  { path: '/contaminants/natural-organic-matter', element: <NaturalOrganicMatter /> },
-  { path: '/contaminants/heavy-metals', element: <HeavyMetals /> },
-  { path: '/contaminants/pfas', element: <PFAS /> },
-  { path: '/contaminants/pesticides-herbicides', element: <PesticidesHerbicides /> },
-  { path: '/contaminants/pathogens-microorganisms', element: <PathogensMicroorganisms /> },
-  { path: '/contaminants/total-phosphorus', element: <TotalPhosphorus /> },
-  { 
-    path: '/about-us', 
-    element: <AboutUs />, 
-    children: [
-      { path: 'preeminent-experts', element: <PreeminentExperts /> },
-      { path: 'leadership', element: <Leadership /> },
-    ]
-  },
-  { path: '/municipal', element: <Municipal /> },
-  { path: '/contact', element: <Contact /> },
-  { path: '/privacy-policy', element: <PrivacyPolicy /> },
-  { path: '/terms-of-service', element: <TermsOfService /> },
-  { path: '/cookie-policy', element: <CookiePolicy /> },
-  { path: '*', element: <NotFound /> }
-];
-
-const renderRoutes = (routes: any[]) => {
-  return routes.map((route, index) => (
-    <Route key={index} path={route.path} element={route.element}>
-      {route.children && renderRoutes(route.children)}
-    </Route>
-  ));
-};
-
 const App = () => {
-  console.log('🚀 [App] Initializing Infinite Water application');
-  
   return (
-    <ErrorBoundary onError={(error, errorInfo) => {
-      console.error('🚨 [App] Top-level error caught:', { error, errorInfo });
-    }}>
-      <QueryClientProvider client={queryClient}>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
-            <ScrollToTop />
-            <ErrorBoundary fallback={<div className="min-h-screen flex items-center justify-center">
-              <div className="text-center">
-                <h1 className="text-xl font-semibold mb-2">🌊 Navigation Error</h1>
-                <p className="text-muted-foreground">Please refresh the page</p>
-              </div>
-            </div>}>
-              <Routes>
-                {renderRoutes(routeConfig)}
-              </Routes>
-            </ErrorBoundary>
-          </BrowserRouter>
-        </TooltipProvider>
-      </QueryClientProvider>
-    </ErrorBoundary>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/case-studies" element={<CaseStudies />} />
+            <Route path="/technology" element={<Technology />} />
+            <Route path="/applications" element={<Applications />} />
+            <Route path="/contaminants" element={<Contaminants />} />
+            <Route path="/contaminants/natural-organic-matter" element={<NaturalOrganicMatter />} />
+            <Route path="/contaminants/heavy-metals" element={<HeavyMetals />} />
+            <Route path="/contaminants/pfas" element={<PFAS />} />
+            <Route path="/contaminants/pesticides-herbicides" element={<PesticidesHerbicides />} />
+            <Route path="/contaminants/pathogens-microorganisms" element={<PathogensMicroorganisms />} />
+            <Route path="/contaminants/total-phosphorus" element={<TotalPhosphorus />} />
+            <Route path="/about-us" element={<AboutUs />}>
+              <Route path="preeminent-experts" element={<PreeminentExperts />} />
+              <Route path="leadership" element={<Leadership />} />
+            </Route>
+            <Route path="/municipal" element={<Municipal />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route path="/cookie-policy" element={<CookiePolicy />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
   );
 };
 

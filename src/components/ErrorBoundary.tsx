@@ -14,13 +14,6 @@ interface State {
   errorInfo?: ErrorInfo;
 }
 
-// Error boundary constants - Uncle Bob: No Magic Numbers
-const ERROR_DISPLAY_CONFIG = {
-  MAX_ERROR_MESSAGE_LENGTH: 200,
-  RELOAD_DELAY_MS: 100,
-  CONSOLE_LOG_PREFIX: '🚨 [ErrorBoundary]',
-} as const;
-
 class ErrorBoundary extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
@@ -28,21 +21,10 @@ class ErrorBoundary extends Component<Props, State> {
   }
 
   static getDerivedStateFromError(error: Error): State {
-    // Update state so the next render will show the fallback UI
-    console.error(`${ERROR_DISPLAY_CONFIG.CONSOLE_LOG_PREFIX} Component Error Caught:`, error);
     return { hasError: true, error };
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    // Log error details for debugging
-    console.error(`${ERROR_DISPLAY_CONFIG.CONSOLE_LOG_PREFIX} Error Details:`, {
-      error: error.message,
-      stack: error.stack,
-      componentStack: errorInfo.componentStack,
-      timestamp: new Date().toISOString(),
-    });
-
-    // Call custom error handler if provided
     if (this.props.onError) {
       this.props.onError(error, errorInfo);
     }
@@ -51,15 +33,11 @@ class ErrorBoundary extends Component<Props, State> {
   }
 
   handleRetry = () => {
-    console.log(`${ERROR_DISPLAY_CONFIG.CONSOLE_LOG_PREFIX} 🔄 User initiated retry`);
     this.setState({ hasError: false, error: undefined, errorInfo: undefined });
   };
 
   handleReload = () => {
-    console.log(`${ERROR_DISPLAY_CONFIG.CONSOLE_LOG_PREFIX} 🔄 Full page reload initiated`);
-    setTimeout(() => {
-      window.location.reload();
-    }, ERROR_DISPLAY_CONFIG.RELOAD_DELAY_MS);
+    window.location.reload();
   };
 
   render() {
@@ -71,8 +49,8 @@ class ErrorBoundary extends Component<Props, State> {
 
       // Default error UI
       const errorMessage = this.state.error?.message || 'An unexpected error occurred';
-      const truncatedMessage = errorMessage.length > ERROR_DISPLAY_CONFIG.MAX_ERROR_MESSAGE_LENGTH 
-        ? `${errorMessage.substring(0, ERROR_DISPLAY_CONFIG.MAX_ERROR_MESSAGE_LENGTH)}...`
+      const truncatedMessage = errorMessage.length > 200 
+        ? `${errorMessage.substring(0, 200)}...`
         : errorMessage;
 
       return (
@@ -81,7 +59,7 @@ class ErrorBoundary extends Component<Props, State> {
             <div className="mb-4">
               <AlertTriangle className="h-12 w-12 text-destructive mx-auto mb-2" />
               <h1 className="text-xl font-semibold text-foreground mb-2">
-                🚨 Something went wrong
+                Something went wrong
               </h1>
               <p className="text-muted-foreground text-sm mb-4">
                 {truncatedMessage}
@@ -95,7 +73,7 @@ class ErrorBoundary extends Component<Props, State> {
                 variant="default"
               >
                 <RefreshCw className="mr-2 h-4 w-4" />
-                🔄 Try Again
+                Try Again
               </Button>
               
               <Button 
@@ -103,14 +81,14 @@ class ErrorBoundary extends Component<Props, State> {
                 variant="outline"
                 className="w-full"
               >
-                🌐 Reload Page
+                Reload Page
               </Button>
             </div>
 
             {process.env.NODE_ENV === 'development' && this.state.error && (
               <details className="mt-4 text-left">
                 <summary className="cursor-pointer text-sm text-muted-foreground">
-                  🔍 Debug Details
+                  Debug Details
                 </summary>
                 <pre className="mt-2 text-xs bg-muted p-2 rounded overflow-auto">
                   {this.state.error.stack}

@@ -4,19 +4,9 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { getImagePath } from '@/data/images';
 import SafeImage from '@/components/SafeImage';
-import ErrorBoundary from '@/components/ErrorBoundary';
-
-// Navigation constants - Uncle Bob: No Magic Numbers
-const NAVIGATION_CONFIG = {
-  LOGO_HEIGHT_CLASS: 'h-12',
-  MOBILE_BREAKPOINT: 'md',
-  CONSOLE_LOG_PREFIX: '🧭 [Navigation]',
-} as const;
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  
-  console.log(`${NAVIGATION_CONFIG.CONSOLE_LOG_PREFIX} 🎯 Rendering navigation component`);
 
   const menuItems = [
     { name: 'Case Studies', href: '/case-studies' },
@@ -28,15 +18,9 @@ const Navigation = () => {
   ];
 
   const logoPath = getImagePath('infinite-water-logo-header');
-  console.log(`${NAVIGATION_CONFIG.CONSOLE_LOG_PREFIX} 🖼️ Logo path resolved:`, logoPath);
 
   return (
-    <ErrorBoundary fallback={<div className="fixed top-0 left-0 right-0 z-50 h-16 bg-background border-b">
-      <div className="flex items-center h-full px-4">
-        <span className="font-bold text-primary">🌊 Infinite Water</span>
-      </div>
-    </div>}>
-      <nav className="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-border/20">
+    <nav className="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-border/20">
         <div className="flex w-full items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0 ml-2">
@@ -44,10 +28,7 @@ const Navigation = () => {
               <SafeImage
                 src={logoPath}
                 alt="Infinite Water"
-                className={`${NAVIGATION_CONFIG.LOGO_HEIGHT_CLASS} w-auto`}
-                onError={(error) => {
-                  console.error(`${NAVIGATION_CONFIG.CONSOLE_LOG_PREFIX} ❌ Logo failed to load:`, error);
-                }}
+                className="h-12 w-auto"
               />
             </Link>
           </div>
@@ -97,7 +78,6 @@ const Navigation = () => {
           </div>
         )}
       </nav>
-    </ErrorBoundary>
   );
 };
 

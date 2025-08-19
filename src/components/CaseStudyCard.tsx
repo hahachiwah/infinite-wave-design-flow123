@@ -1,8 +1,6 @@
 import { ArrowRight, MapPin } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Link } from 'react-router-dom';
 import { CaseStudy } from '@/data/caseStudies';
 import { getCategoryColor } from '@/lib/categoryUtils';
 import { getImagePath } from '@/data/images';
@@ -64,24 +62,6 @@ export const CaseStudyCard = ({ study, index }: CaseStudyCardProps) => {
             <span className="text-sm font-semibold text-primary">{study.results.savings}</span>
           </div>
         </div>
-
-        {/* <div className="mt-4 p-4 bg-primary/5 rounded-lg border border-primary/10">
-          <h4 className="font-semibold text-foreground mb-2">Patented Technology Used:</h4>
-          <div className="flex items-center justify-between">
-            <span className="text-primary font-medium">{study.technology}</span>
-            <Link 
-              to={study.technologyLink} 
-              className="text-sm text-primary hover:text-primary/80 transition-colors underline"
-            >
-              Learn More
-            </Link>
-          </div>
-        </div>
-
-        <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-base">
-          View Case Study
-          <ArrowRight className="ml-2 h-4 w-4" />
-        </Button> */}
       </CardContent>
     </Card>
   );

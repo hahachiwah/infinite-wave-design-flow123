@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import { ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { SearchBar } from '@/components/ui/search-bar';
 import { TagFilter } from '@/components/ui/tag-filter';
 import { CaseStudyCard } from '@/components/CaseStudyCard';
@@ -39,13 +37,6 @@ const CaseStudiesSection = () => {
             <CaseStudyCard key={index} study={study} index={index} />
           ))}
         </div>
-
-        {/* <div className="text-center mt-12">
-          <Button size="lg" className="shadow-medium">
-            View All Case Studies
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
-        </div> */}
         </div>
       </section>
   );
