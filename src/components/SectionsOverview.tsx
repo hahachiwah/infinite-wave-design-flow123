@@ -73,8 +73,8 @@ const SectionsOverview = () => {
                 {/* Overlay - Different gradient direction for alternating effect */}
                 <div className={`absolute inset-0 ${
                   isEven 
-                    ? 'bg-gradient-to-r from-background/95 via-background/80 to-background/30' 
-                    : 'bg-gradient-to-l from-background/95 via-background/80 to-background/30'
+                    ? 'bg-gradient-to-r from-background/95 via-background/80 to-background/10' 
+                    : 'bg-gradient-to-l from-background/95 via-background/80 to-background/10'
                 }`} />
                 
                 {/* Content - Alternating left/right alignment */}
